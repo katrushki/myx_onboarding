@@ -1,7 +1,6 @@
-import 'react-native-gesture-handler';
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
-import {createNativeStackNavigator} from '@native-stackreact-navigation/stack';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import WelcomeOBS from './src/screens/onboarding/I_Welcome';
 
 
@@ -19,4 +18,4 @@ const App = ()=> {
   )
 };
 
-export default NavigationContainer(AppNavigator);
+export default App;

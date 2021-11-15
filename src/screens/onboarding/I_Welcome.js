@@ -8,23 +8,28 @@ import {View, StyleSheet, Text, TouchableOpacity, ImageBackground} from 'react-n
 // onboarding screen I component creation
 // ultimately check whether it makes sense to wrap everything in a SafeAreaView
 const WelcomeOBS = () => {
-    return(
-        <View style = {styles.viewStyle}>
-            <ImageBackground source= {require('assets\welcomeBackgroundImage.png')}/>
-            <View style ={styles.viewHeaderStyle}>
-                <Text style ={styles.headerText}>Welcome to MYX!</Text>
-            </View>
-            <View style = {styles.viewBodyStyle}>
-                <Text style ={styles.bodyText}>Believe us when we say together we will myx some things up. Ready?</Text>
-            </View>
-            <View style = {styles.viewButtonStyle}>
-                <TouchableOpacity 
-                   style = {styles.buttonStyle}>
-                <Text style= {styles.buttonText}>Born ready!</Text>
-                </TouchableOpacity>
-            </View>
-        </View>
-    )
+    return (
+      <View style={styles.viewStyle}>
+        <ImageBackground
+          source={require('././assets/welcomeBackgroundImage.png')}
+          style={styles.imageStyle}
+        >
+          <View style={styles.viewHeaderStyle}>
+            <Text style={styles.headerText}>Welcome to MYX!</Text>
+          </View>
+          <View style={styles.viewBodyStyle}>
+            <Text style={styles.bodyText}>
+              Believe us when we say together we will myx some things up. Ready?
+            </Text>
+          </View>
+          <View style={styles.viewButtonStyle}>
+            <TouchableOpacity style={styles.buttonStyle}>
+              <Text style={styles.buttonText}>Born ready!</Text>
+            </TouchableOpacity>
+          </View>
+        </ImageBackground>
+      </View>
+    );
 }
 
 // application of styling within the StyleSheet
@@ -81,6 +86,13 @@ const styles = StyleSheet.create({
         fontSize: 15,
         color: '#FFFFFF',
 
+    },
+    imageStyle: {
+        width: '100%',
+        height: '100%',
+        flex: 1,
+        resizeMode: 'cover',
+        justifyContent: 'center'
     }
 });
 

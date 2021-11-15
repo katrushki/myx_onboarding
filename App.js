@@ -13,7 +13,7 @@ const App = ()=> {
     <NavigationContainer>
       <AppNavigator.Navigator>
         <AppNavigator.Screen 
-          name='-' 
+          name=' ' 
           component ={WelcomeOBS} />
       </AppNavigator.Navigator>
     </NavigationContainer>

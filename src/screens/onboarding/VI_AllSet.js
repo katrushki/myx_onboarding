@@ -4,16 +4,21 @@
 
 import React from "react";
 import {View, StyleSheet, Text, TouchableOpacity, ImageBackground} from 'react-native';
+import Images from "../../../assets/Images";
 
 // Finalisation screen/ last onboarding screen
 
-const AllSetOBS = () => {
+const AllSetOBS = ({navigation}) => {
+  navigation.setOptions ({
+    headerShown: false,
+  });
+  
   return (
-    <View style={styles.viewStyle}>
-      <ImageBackground
-        style={styles.imageStyle}
-        source= {"C:\Users\kater\myx_onb\assets\welcomeBackgroundImage.png"}
-      >
+    <ImageBackground 
+      source= {Images.background}
+      resizeMode= {'cover'}
+      resizeMethod= {'auto'}
+    style={styles.viewStyle}>
         <View style={styles.viewHeaderStyle}>
           <Text style={styles.headerText}>You are all set</Text>
         </View>
@@ -24,11 +29,10 @@ const AllSetOBS = () => {
         </View>
         <View style={styles.viewButtonStyle}>
           <TouchableOpacity style={styles.buttonStyle}>
-            <Text style={styles.buttonText}>About high-time! </Text>
+            <Text style={styles.buttonText}>Enter the myxverse </Text>
           </TouchableOpacity>
         </View>
-      </ImageBackground>
-    </View>
+    </ImageBackground>
   );
 };
 
@@ -52,7 +56,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 25,
   },
   viewButtonStyle: {
-    flex: 1.5,
+    flex: 1,
     justifyContent: "flex-start",
     alignItems: "center",
     borderBottomColor: "black",

@@ -11,7 +11,7 @@ const WelcomeOBS = () => {
     return (
       <View style={styles.viewStyle}>
         <ImageBackground
-          source={require('././assets/welcomeBackgroundImage.png')}
+          source={require("C:\Users\kater\myx_onb\assets\welcomeBackgroundImage.png")}
           style={styles.imageStyle}
         >
           <View style={styles.viewHeaderStyle}>
@@ -90,7 +90,8 @@ const styles = StyleSheet.create({
     imageStyle: {
         width: '100%',
         height: '100%',
-        flex: 1,
+        opacity: 0.95,
+        alignContent: 'center',
         resizeMode: 'cover',
         justifyContent: 'center'
     }

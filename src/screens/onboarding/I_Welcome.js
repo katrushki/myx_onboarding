@@ -1,9 +1,16 @@
 // WELCOME to MYX - Screen
 
 // Roboto and sans-serif are Android-only fonts and therefore we need to specify another font family for each platform respectively
+
 // comment to self: the only thing missing is the logo on the top -> evaluate options either to be added on header or as additional component on screen
 import React from "react";
-import {View, StyleSheet, Text, TouchableOpacity, ImageBackground} from 'react-native';
+import {
+  View,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  ImageBackground,
+} from "react-native";
 import Images from "../../../assets/Images";
 
 // onboarding screen I component creation
@@ -64,11 +71,11 @@ const styles = StyleSheet.create({
     justifyContent: "flex-start",
     alignItems: "center",
     borderBottomColor: "black",
-    alignItems:'center'
+    alignItems: "center",
   },
   viewImageStyle: {
     flex: 0.5,
-    justifyContent:'flex-start'
+    justifyContent: "flex-start",
   },
   headerText: {
     fontFamily: "Roboto",
@@ -101,10 +108,8 @@ const styles = StyleSheet.create({
   },
   imageStyle: {
     width: 10,
-    height: 12
+    height: 12,
   },
 });
 
-
 export default WelcomeOBS;
-

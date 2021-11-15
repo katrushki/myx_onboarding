@@ -3,35 +3,40 @@
 // Roboto and sans-serif are Android-only fonts and therefore we need to specify another font family for each platform respectively
 
 import React from "react";
-import {View, StyleSheet, Text, TouchableOpacity, ImageBackground} from 'react-native';
+import {
+  View,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  ImageBackground,
+} from "react-native";
 import Images from "../../../assets/Images";
 
 // Finalisation screen/ last onboarding screen
 
-const AllSetOBS = ({navigation}) => {
-  navigation.setOptions ({
+const AllSetOBS = ({ navigation }) => {
+  navigation.setOptions({
     headerShown: false,
   });
-  
+
   return (
-    <ImageBackground 
-      source= {Images.background}
-      resizeMode= {'cover'}
-      resizeMethod= {'auto'}
-    style={styles.viewStyle}>
-        <View style={styles.viewHeaderStyle}>
-          <Text style={styles.headerText}>You are all set</Text>
-        </View>
-        <View style={styles.viewBodyStyle}>
-          <Text style={styles.bodyText}>
-            It's about time to get you myxed?!{" "}
-          </Text>
-        </View>
-        <View style={styles.viewButtonStyle}>
-          <TouchableOpacity style={styles.buttonStyle}>
-            <Text style={styles.buttonText}>Enter the myxverse </Text>
-          </TouchableOpacity>
-        </View>
+    <ImageBackground
+      source={Images.background}
+      resizeMode={"cover"}
+      resizeMethod={"auto"}
+      style={styles.viewStyle}
+    >
+      <View style={styles.viewHeaderStyle}>
+        <Text style={styles.headerText}>You are all set</Text>
+      </View>
+      <View style={styles.viewBodyStyle}>
+        <Text style={styles.bodyText}>It's about time to get you myxed?! </Text>
+      </View>
+      <View style={styles.viewButtonStyle}>
+        <TouchableOpacity style={styles.buttonStyle}>
+          <Text style={styles.buttonText}>Enter the myxverse </Text>
+        </TouchableOpacity>
+      </View>
     </ImageBackground>
   );
 };
@@ -97,6 +102,4 @@ const styles = StyleSheet.create({
   },
 });
 
-
 export default AllSetOBS;
-

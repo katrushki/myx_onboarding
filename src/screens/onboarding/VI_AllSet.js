@@ -12,7 +12,7 @@ const AllSetOBS = () => {
     <View style={styles.viewStyle}>
       <ImageBackground
         style={styles.imageStyle}
-        source="./assets/welcomeBackgroundImage.png"
+        source= {"C:\Users\kater\myx_onb\assets\welcomeBackgroundImage.png"}
       >
         <View style={styles.viewHeaderStyle}>
           <Text style={styles.headerText}>You are all set</Text>
@@ -87,9 +87,7 @@ const styles = StyleSheet.create({
     color: "#FFFFFF",
   },
   imageStyle: {
-    width: "100%",
-    height: "100%",
-    opacity: 0.95,
+    flex: 1,
     resizeMode: "cover",
     justifyContent: "center",
   },

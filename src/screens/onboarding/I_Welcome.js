@@ -9,25 +9,22 @@ import {View, StyleSheet, Text, TouchableOpacity, ImageBackground} from 'react-n
 // ultimately check whether it makes sense to wrap everything in a SafeAreaView
 const WelcomeOBS = () => {
     return (
-      <View style={styles.viewStyle}>
-        <ImageBackground
-          source={require("C:\Users\kater\myx_onb\assets\welcomeBackgroundImage.png")}
-          style={styles.imageStyle}
-        >
-          <View style={styles.viewHeaderStyle}>
-            <Text style={styles.headerText}>Welcome to MYX!</Text>
-          </View>
-          <View style={styles.viewBodyStyle}>
-            <Text style={styles.bodyText}>
-              Believe us when we say together we will myx some things up. Ready?
-            </Text>
-          </View>
-          <View style={styles.viewButtonStyle}>
-            <TouchableOpacity style={styles.buttonStyle}>
-              <Text style={styles.buttonText}>Born ready!</Text>
-            </TouchableOpacity>
-          </View>
-        </ImageBackground>
+      <View
+        style={styles.viewStyle}
+      >
+        <View style={styles.viewHeaderStyle}>
+          <Text style={styles.headerText}>Welcome to MYX!</Text>
+        </View>
+        <View style={styles.viewBodyStyle}>
+          <Text style={styles.bodyText}>
+            Believe us when we say together we will myx some things up. Ready?
+          </Text>
+        </View>
+        <View style={styles.viewButtonStyle}>
+          <TouchableOpacity style={styles.buttonStyle}>
+            <Text style={styles.buttonText}>Born ready!</Text>
+          </TouchableOpacity>
+        </View>
       </View>
     );
 }
@@ -87,9 +84,7 @@ const styles = StyleSheet.create({
     color: "#FFFFFF",
   },
   imageStyle: {
-    width: "100%",
-    height: "100%",
-    opacity: 0.95,
+    flex: 1,
     resizeMode: "cover",
     justifyContent: "center",
   },

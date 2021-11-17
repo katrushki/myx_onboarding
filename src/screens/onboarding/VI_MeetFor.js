@@ -40,7 +40,9 @@ const MeetForOBS = ({ navigation }) => {
               </TouchableOpacity>
           </View>
           <View style={styles.viewButton}>
-        <TouchableOpacity style={styles.buttonStyle}>
+        <TouchableOpacity 
+            style={styles.buttonStyle}
+            onPress = {() => navigation.navigate('AllSet')}>
           <Text style={styles.buttonText}>Skip</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.buttonStyle}>

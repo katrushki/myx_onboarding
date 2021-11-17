@@ -39,19 +39,18 @@ const MeetPrefOBS = ({ navigation }) => {
               </TouchableOpacity>
           </View>
           <View style={styles.viewButton}>
-        <TouchableOpacity style={styles.buttonStyle}>
-          <Text style={styles.buttonText}>Skip</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.buttonStyle}>
-          <Ionicons
-            name="chevron-forward-circle"
-            size={35}
-            style={styles.iconStyle}
-          />
-        </TouchableOpacity>
-      </View>
-    </ImageBackground>
-    )
+            <TouchableOpacity 
+                style={styles.buttonStyle}
+                onPress = {() => navigation.navigate('MeetFor')}>
+            <Text style={styles.buttonText}>Skip</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.buttonStyle}><Ionicons
+                name="chevron-forward-circle"
+                size={35}
+                style={styles.iconStyle}/></TouchableOpacity>
+            </View>
+        </ImageBackground>
+    );
 };
 
 const styles = StyleSheet.create({

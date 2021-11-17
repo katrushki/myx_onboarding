@@ -70,7 +70,9 @@ const BasicInfoOBS = ({ navigation }) => {
         </View>
       </View>
       <View style={styles.viewButton}>
-        <TouchableOpacity style={styles.buttonStyle}>
+        <TouchableOpacity 
+          onPress= {()=> navigation.navigate('Expertise')}
+          style={styles.buttonStyle}>
           <Text style={styles.buttonText}>Skip</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.buttonStyle}>

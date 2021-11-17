@@ -42,7 +42,7 @@ const WelcomeOBS = ({ navigation }) => {
       <View style={styles.viewButtonStyle}>
         <TouchableOpacity 
           style={styles.buttonStyle}
-          onPress= { () => navigation.navigate('BasicInfo')}>
+          onPress= { () => navigation.navigate('MeetFor')}>
           <Text style={styles.buttonText}>Born ready!</Text>
         </TouchableOpacity>
       </View>
@@ -97,7 +97,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#6C2BEC",
     height: 60,
     width: 300,
-    borderRadius: 100,
+    borderRadius: 13,
     justifyContent: "center",
     alignItems: "center",
     // elevation prop adds the drop shadow (!)

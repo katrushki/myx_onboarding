@@ -3,7 +3,6 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import WelcomeOBS from './src/screens/onboarding/I_Welcome';
 import AllSetOBS from './src/screens/onboarding/VII_AllSet';
-import BasicInfo from './src/screens/onboarding/II_BasicInfo';
 import BasicInfoOBS from './src/screens/onboarding/II_BasicInfo';
 import ExpertiseOBS from './src/screens/onboarding/III_Expertise';
 import InterestsOBS from './src/screens/onboarding/IV_Interests';

@@ -17,6 +17,8 @@ const BasicInfoOBS = ({ navigation }) => {
     headerShown: false,
   });
 
+
+  //implement useState function here to hold data input to make a request with axios
   return (
     <ImageBackground
       source={Images.basicInfoBackground}
@@ -108,6 +110,7 @@ const styles = StyleSheet.create({
     borderWidth: 0.5,
     borderRadius: 13,
     marginHorizontal: 10,
+    elevation: 5
   },
   viewButton: {
     flex: 1,

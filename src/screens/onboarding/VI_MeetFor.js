@@ -1,7 +1,15 @@
-// MEETING PREFERENCE SCREEN - in person, Zoom, or prefer not to meet
+// MEETING FOR SCREEN - Coffee, Tea, Lunch, Drinks, Chat, Walk, Other
 
-import * as React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import * as React from "react";
+import {
+  View,
+  Text,
+  StyleSheet,
+  TouchableOpacity,
+  ImageBackground,
+} from "react-native";
+import Images from "../../../assets/Images";
+import { Ionicons } from "@expo/vector-icons";
 
 const MeetForOBS = ({ navigation }) => {
     navigation.setOptions({
@@ -16,45 +24,42 @@ const MeetForOBS = ({ navigation }) => {
           style={styles.viewStyle}
         >
           <View style={styles.viewHeader}>
-            <Text style={styles.headerText}>Let's meet for...</Text>
-            <Text>Select multiple options</Text>
+            <Text style={styles.headerText}>Let's meet for ...</Text>
+            <Text>Multiple options possible</Text>
           </View>
-          <View>
-              <TouchableOpacity>
-                  <Text>Coffee/Tea</Text>
+          <View style = {styles.viewSelection}>
+              <TouchableOpacity style= {styles.selectionStyle} >
+                  <Text style= {styles.selectionText}>Coffee/Tea</Text>
               </TouchableOpacity>
-              <TouchableOpacity>
-                  <Text>Lunch</Text>
+              <TouchableOpacity style={styles.selectionStyle}>
+                  <Text style= {styles.selectionText}>Lunch</Text>
               </TouchableOpacity>
-              <TouchableOpacity>
-                  <Text>Drinks</Text>
+              <TouchableOpacity style={styles.selectionStyle}>
+                  <Text style= {styles.selectionText}>Drinks</Text>
               </TouchableOpacity>
-              <TouchableOpacity>
-                  <Text>Chat</Text>
+              <TouchableOpacity style={styles.selectionStyle}>
+                  <Text style= {styles.selectionText}>Chat</Text>
               </TouchableOpacity>
-              <TouchableOpacity>
-                  <Text>Walk</Text>
+              <TouchableOpacity style={styles.selectionStyle}>
+                  <Text style= {styles.selectionText}>Walk</Text>
               </TouchableOpacity>
-              <TouchableOpacity>
-                  <Text>Other</Text>
+              <TouchableOpacity style={styles.selectionStyle}>
+                  <Text style= {styles.selectionText}>Other</Text>
               </TouchableOpacity>
           </View>
           <View style={styles.viewButton}>
-        <TouchableOpacity 
-            style={styles.buttonStyle}
-            onPress = {() => navigation.navigate('AllSet')}>
-          <Text style={styles.buttonText}>Skip</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.buttonStyle}>
-          <Ionicons
-            name="chevron-forward-circle"
-            size={35}
-            style={styles.iconStyle}
-          />
-        </TouchableOpacity>
-      </View>
-    </ImageBackground>
-    )
+            <TouchableOpacity 
+                style={styles.buttonStyle}
+                onPress = {() => navigation.navigate('MeetFor')}>
+            <Text style={styles.buttonText}>Skip</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.buttonStyle}><Ionicons
+                name="chevron-forward-circle"
+                size={35}
+                style={styles.iconStyle}/></TouchableOpacity>
+            </View>
+        </ImageBackground>
+    );
 };
 
 const styles = StyleSheet.create({
@@ -62,6 +67,12 @@ const styles = StyleSheet.create({
     backgroundColor: "#5E18EA",
     flexDirection: "column",
     flex: 1,
+  },
+  viewSelection: {
+      flex: 3,
+      flexDirection:'column',
+      justifyContent: 'flex-start',
+      alignItems: 'center'
   },
   viewButton: {
     flex: 1,
@@ -75,6 +86,17 @@ const styles = StyleSheet.create({
     alignItems: "center",
     borderBottomColor: "#FFF",
     borderBottomWidth: 1,
+    marginBottom: 68
+  },
+  selectionStyle: {
+      justifyContent: 'center',
+      backgroundColor: '#6624EB',
+      height: 60,
+      width: 300,
+      borderRadius: 13,
+      borderWidth: 0.5,
+      borderColor: '#FFF',
+      marginBottom: 15
   },
   buttonStyle: {
     paddingHorizontal: 65,
@@ -92,6 +114,12 @@ const styles = StyleSheet.create({
     fontSize: 20,
     opacity: 0.5,
     color: "#FFF",
+  },
+  selectionText: {
+    fontFamily: "Roboto",
+    fontSize: 20,
+    color: "#FFF",
+    textAlign: 'center'
   },
   iconStyle: {
     color: "#FFF",

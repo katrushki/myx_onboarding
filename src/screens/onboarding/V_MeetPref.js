@@ -5,7 +5,6 @@ import {
   View,
   Text,
   StyleSheet,
-  TextInput,
   TouchableOpacity,
   ImageBackground,
 } from "react-native";
@@ -27,15 +26,15 @@ const MeetPrefOBS = ({ navigation }) => {
           <View style={styles.viewHeader}>
             <Text style={styles.headerText}>How do you prefer to meet?</Text>
           </View>
-          <View>
-              <TouchableOpacity>
-                  <Text>In person</Text>
+          <View style = {styles.viewSelection}>
+              <TouchableOpacity style= {styles.selectionStyle}>
+                  <Text style= {styles.selectionText}>In person</Text>
               </TouchableOpacity>
-              <TouchableOpacity>
-                  <Text>Zoom</Text>
+              <TouchableOpacity style={styles.selectionStyle}>
+                  <Text style= {styles.selectionText}>Zoom</Text>
               </TouchableOpacity>
-              <TouchableOpacity>
-                  <Text>Prefer not to meet</Text>
+              <TouchableOpacity style={styles.selectionStyle}>
+                  <Text style= {styles.selectionText}>Prefer not to meet</Text>
               </TouchableOpacity>
           </View>
           <View style={styles.viewButton}>
@@ -59,6 +58,12 @@ const styles = StyleSheet.create({
     flexDirection: "column",
     flex: 1,
   },
+  viewSelection: {
+      flex: 3,
+      flexDirection:'column',
+      justifyContent: 'flex-start',
+      alignItems: 'center'
+  },
   viewButton: {
     flex: 1,
     alignItems: "flex-end",
@@ -71,6 +76,17 @@ const styles = StyleSheet.create({
     alignItems: "center",
     borderBottomColor: "#FFF",
     borderBottomWidth: 1,
+    marginBottom: 68
+  },
+  selectionStyle: {
+      justifyContent: 'center',
+      backgroundColor: '#6624EB',
+      height: 60,
+      width: 300,
+      borderRadius: 13,
+      borderWidth: 0.5,
+      borderColor: '#FFF',
+      marginBottom: 15
   },
   buttonStyle: {
     paddingHorizontal: 65,
@@ -88,6 +104,12 @@ const styles = StyleSheet.create({
     fontSize: 20,
     opacity: 0.5,
     color: "#FFF",
+  },
+  selectionText: {
+    fontFamily: "Roboto",
+    fontSize: 20,
+    color: "#FFF",
+    textAlign: 'center'
   },
   iconStyle: {
     color: "#FFF",

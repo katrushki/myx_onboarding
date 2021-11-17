@@ -12,54 +12,58 @@ import Images from "../../../assets/Images";
 import { Ionicons } from "@expo/vector-icons";
 
 const MeetForOBS = ({ navigation }) => {
-    navigation.setOptions({
-      headerShown: false,
-    });
+  navigation.setOptions({
+    headerShown: false,
+  });
 
-    return (
-        <ImageBackground
-          source={Images.basicInfoBackground}
-          resizeMode="cover"
-          resizeMethod="auto"
-          style={styles.viewStyle}
+  return (
+    <ImageBackground
+      source={Images.basicInfoBackground}
+      resizeMode="cover"
+      resizeMethod="auto"
+      style={styles.viewStyle}
+    >
+      <View style={styles.viewHeader}>
+        <Text style={styles.headerText}>Let's meet for ...</Text>
+        <Text style={styles.bodyText}>Multiple selection possible</Text>
+      </View>
+      <View style={styles.viewSelection}>
+        <TouchableOpacity style={styles.selectionStyle}>
+          <Text style={styles.selectionText}>Coffee/Tea</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.selectionStyle}>
+          <Text style={styles.selectionText}>Lunch</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.selectionStyle}>
+          <Text style={styles.selectionText}>Drinks</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.selectionStyle}>
+          <Text style={styles.selectionText}>Chat</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.selectionStyle}>
+          <Text style={styles.selectionText}>Walk</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.selectionStyle}>
+          <Text style={styles.selectionText}>Other</Text>
+        </TouchableOpacity>
+      </View>
+      <View style={styles.viewButton}>
+        <TouchableOpacity
+          style={styles.buttonStyle}
+          onPress={() => navigation.navigate("MeetFor")}
         >
-          <View style={styles.viewHeader}>
-            <Text style={styles.headerText}>Let's meet for ...</Text>
-            <Text>Multiple options possible</Text>
-          </View>
-          <View style = {styles.viewSelection}>
-              <TouchableOpacity style= {styles.selectionStyle} >
-                  <Text style= {styles.selectionText}>Coffee/Tea</Text>
-              </TouchableOpacity>
-              <TouchableOpacity style={styles.selectionStyle}>
-                  <Text style= {styles.selectionText}>Lunch</Text>
-              </TouchableOpacity>
-              <TouchableOpacity style={styles.selectionStyle}>
-                  <Text style= {styles.selectionText}>Drinks</Text>
-              </TouchableOpacity>
-              <TouchableOpacity style={styles.selectionStyle}>
-                  <Text style= {styles.selectionText}>Chat</Text>
-              </TouchableOpacity>
-              <TouchableOpacity style={styles.selectionStyle}>
-                  <Text style= {styles.selectionText}>Walk</Text>
-              </TouchableOpacity>
-              <TouchableOpacity style={styles.selectionStyle}>
-                  <Text style= {styles.selectionText}>Other</Text>
-              </TouchableOpacity>
-          </View>
-          <View style={styles.viewButton}>
-            <TouchableOpacity 
-                style={styles.buttonStyle}
-                onPress = {() => navigation.navigate('MeetFor')}>
-            <Text style={styles.buttonText}>Skip</Text>
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.buttonStyle}><Ionicons
-                name="chevron-forward-circle"
-                size={35}
-                style={styles.iconStyle}/></TouchableOpacity>
-            </View>
-        </ImageBackground>
-    );
+          <Text style={styles.buttonText}>Skip</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.buttonStyle}>
+          <Ionicons
+            name="chevron-forward-circle"
+            size={35}
+            style={styles.iconStyle}
+          />
+        </TouchableOpacity>
+      </View>
+    </ImageBackground>
+  );
 };
 
 const styles = StyleSheet.create({
@@ -69,10 +73,10 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   viewSelection: {
-      flex: 3,
-      flexDirection:'column',
-      justifyContent: 'flex-start',
-      alignItems: 'center'
+    flex: 3,
+    flexDirection: "column",
+    justifyContent: "flex-start",
+    alignItems: "center",
   },
   viewButton: {
     flex: 1,
@@ -86,17 +90,17 @@ const styles = StyleSheet.create({
     alignItems: "center",
     borderBottomColor: "#FFF",
     borderBottomWidth: 1,
-    marginBottom: 68
+    marginBottom: 68,
   },
   selectionStyle: {
-      justifyContent: 'center',
-      backgroundColor: '#6624EB',
-      height: 60,
-      width: 300,
-      borderRadius: 13,
-      borderWidth: 0.5,
-      borderColor: '#FFF',
-      marginBottom: 15
+    justifyContent: "center",
+    backgroundColor: "#6624EB",
+    height: 60,
+    width: 300,
+    borderRadius: 13,
+    borderWidth: 0.5,
+    borderColor: "#FFF",
+    marginBottom: 15,
   },
   buttonStyle: {
     paddingHorizontal: 65,
@@ -109,6 +113,12 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     color: "#FFF",
   },
+  bodyText: {
+    fontFamily: "Roboto",
+    fontSize: 12,
+    color: "#FFF",
+    opacity: 0.75,
+  },
   buttonText: {
     fontFamily: "Roboto",
     fontSize: 20,
@@ -119,7 +129,7 @@ const styles = StyleSheet.create({
     fontFamily: "Roboto",
     fontSize: 20,
     color: "#FFF",
-    textAlign: 'center'
+    textAlign: "center",
   },
   iconStyle: {
     color: "#FFF",

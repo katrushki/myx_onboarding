@@ -42,7 +42,7 @@ const WelcomeOBS = ({ navigation }) => {
       <View style={styles.viewButtonStyle}>
         <TouchableOpacity 
           style={styles.buttonStyle}
-          onPress= { () => navigation.navigate('MeetFor')}>
+          onPress= { () => navigation.navigate('MeetPref')}>
           <Text style={styles.buttonText}>Born ready!</Text>
         </TouchableOpacity>
       </View>

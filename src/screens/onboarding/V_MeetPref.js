@@ -10,6 +10,7 @@ import {
 } from "react-native";
 import Images from "../../../assets/Images";
 import { Ionicons } from "@expo/vector-icons";
+import Emoji from "react-native-emoji";
 
 const MeetPrefOBS = ({ navigation }) => {
     navigation.setOptions({
@@ -24,17 +25,17 @@ const MeetPrefOBS = ({ navigation }) => {
           style={styles.viewStyle}
         >
           <View style={styles.viewHeader}>
-            <Text style={styles.headerText}>How do you prefer to meet?</Text>
+            <Text style={styles.headerText}>How would you prefer to meet?</Text>
           </View>
           <View style = {styles.viewSelection}>
               <TouchableOpacity style= {styles.selectionStyle}>
-                  <Text style= {styles.selectionText}>In person</Text>
+                  <Text style= {styles.selectionText}><Emoji name="couple" style={{fontSize: 20, marginRight: 10}} /> In person</Text>
               </TouchableOpacity>
               <TouchableOpacity style={styles.selectionStyle}>
-                  <Text style= {styles.selectionText}>Zoom</Text>
+                  <Text style= {styles.selectionText}><Emoji name="computer" style={{fontSize: 20, marginRight: 10}} /> Zoom</Text>
               </TouchableOpacity>
               <TouchableOpacity style={styles.selectionStyle}>
-                  <Text style= {styles.selectionText}>Prefer not to meet</Text>
+                  <Text style= {styles.selectionText}><Emoji name="squid" style={{fontSize: 20, marginRight: 10}} /> Prefer not to meet</Text>
               </TouchableOpacity>
           </View>
           <View style={styles.viewButton}>

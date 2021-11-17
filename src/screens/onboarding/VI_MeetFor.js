@@ -10,6 +10,7 @@ import {
 } from "react-native";
 import Images from "../../../assets/Images";
 import { Ionicons } from "@expo/vector-icons";
+import Emoji from "react-native-emoji";
 
 const MeetForOBS = ({ navigation }) => {
   navigation.setOptions({
@@ -29,28 +30,28 @@ const MeetForOBS = ({ navigation }) => {
       </View>
       <View style={styles.viewSelection}>
         <TouchableOpacity style={styles.selectionStyle}>
-          <Text style={styles.selectionText}>Coffee/Tea</Text>
+          <Text style={styles.selectionText}><Emoji name="coffee" style={{fontSize: 20, marginRight: 10}} /> Coffee/Tea</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.selectionStyle}>
-          <Text style={styles.selectionText}>Lunch</Text>
+          <Text style={styles.selectionText}><Emoji name="fork_and_knife" style={{fontSize: 20, marginRight: 10}} /> Lunch</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.selectionStyle}>
-          <Text style={styles.selectionText}>Drinks</Text>
+          <Text style={styles.selectionText}><Emoji name="cocktail" style={{fontSize: 20, marginRight: 10}} /> Drinks</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.selectionStyle}>
-          <Text style={styles.selectionText}>Chat</Text>
+          <Text style={styles.selectionText}><Emoji name="nerd_face" style={{fontSize: 20, marginRight: 10}} /> Chat</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.selectionStyle}>
-          <Text style={styles.selectionText}>Walk</Text>
+          <Text style={styles.selectionText}><Emoji name="deciduous_tree" style={{fontSize: 20, marginRight: 10}} /> Walk</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.selectionStyle}>
-          <Text style={styles.selectionText}>Other</Text>
+          <Text style={styles.selectionText}><Emoji name="rocket" style={{fontSize: 20, marginRight: 10}} /> Other</Text>
         </TouchableOpacity>
       </View>
       <View style={styles.viewButton}>
         <TouchableOpacity
           style={styles.buttonStyle}
-          onPress={() => navigation.navigate("MeetFor")}
+          onPress={() => navigation.navigate("AllSet")}
         >
           <Text style={styles.buttonText}>Skip</Text>
         </TouchableOpacity>

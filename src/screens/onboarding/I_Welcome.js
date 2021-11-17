@@ -12,6 +12,7 @@ import {
   ImageBackground,
 } from "react-native";
 import Images from "../../../assets/Images";
+import BasicInfoOBS from "./II_BasicInfo";
 
 // onboarding screen I component creation
 const WelcomeOBS = ({ navigation }) => {
@@ -39,7 +40,9 @@ const WelcomeOBS = ({ navigation }) => {
         </Text>
       </View>
       <View style={styles.viewButtonStyle}>
-        <TouchableOpacity style={styles.buttonStyle}>
+        <TouchableOpacity 
+          style={styles.buttonStyle}
+          onPress= { () => navigation.navigate('BasicInfo')}>
           <Text style={styles.buttonText}>Born ready!</Text>
         </TouchableOpacity>
       </View>

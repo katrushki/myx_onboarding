@@ -14,8 +14,15 @@ const App = ()=> {
     <NavigationContainer>
       <AppNavigator.Navigator>
         <AppNavigator.Screen 
-          name=' ' 
-          component ={BasicInfoOBS} />
+          name='Welcome' 
+          component ={WelcomeOBS} />
+        <AppNavigator.Screen
+          name='BasicInfo'
+          component= {BasicInfoOBS}
+          />
+        <AppNavigator.Screen
+          name= 'AllSet'
+          component= {AllSetOBS}/>
       </AppNavigator.Navigator>
     </NavigationContainer>
   )

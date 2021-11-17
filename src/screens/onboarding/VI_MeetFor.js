@@ -11,6 +11,7 @@ import {
 import Images from "../../../assets/Images";
 import { Ionicons } from "@expo/vector-icons";
 import Emoji from "react-native-emoji";
+import LogoOBS from "../../components/LogoOBS";
 
 const MeetForOBS = ({ navigation }) => {
   navigation.setOptions({
@@ -24,28 +25,53 @@ const MeetForOBS = ({ navigation }) => {
       resizeMethod="auto"
       style={styles.viewStyle}
     >
+      <LogoOBS />
       <View style={styles.viewHeader}>
         <Text style={styles.headerText}>Let's meet for ...</Text>
         <Text style={styles.bodyText}>Multiple selection possible</Text>
       </View>
       <View style={styles.viewSelection}>
         <TouchableOpacity style={styles.selectionStyle}>
-          <Text style={styles.selectionText}><Emoji name="coffee" style={{fontSize: 20, marginRight: 10}} /> Coffee/Tea</Text>
+          <Text style={styles.selectionText}>
+            <Emoji name="coffee" style={{ fontSize: 20, marginRight: 10 }} />{" "}
+            Coffee/Tea
+          </Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.selectionStyle}>
-          <Text style={styles.selectionText}><Emoji name="fork_and_knife" style={{fontSize: 20, marginRight: 10}} /> Lunch</Text>
+          <Text style={styles.selectionText}>
+            <Emoji
+              name="fork_and_knife"
+              style={{ fontSize: 20, marginRight: 10 }}
+            />{" "}
+            Lunch
+          </Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.selectionStyle}>
-          <Text style={styles.selectionText}><Emoji name="cocktail" style={{fontSize: 20, marginRight: 10}} /> Drinks</Text>
+          <Text style={styles.selectionText}>
+            <Emoji name="cocktail" style={{ fontSize: 20, marginRight: 10 }} />{" "}
+            Drinks
+          </Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.selectionStyle}>
-          <Text style={styles.selectionText}><Emoji name="nerd_face" style={{fontSize: 20, marginRight: 10}} /> Chat</Text>
+          <Text style={styles.selectionText}>
+            <Emoji name="nerd_face" style={{ fontSize: 20, marginRight: 10 }} />{" "}
+            Chat
+          </Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.selectionStyle}>
-          <Text style={styles.selectionText}><Emoji name="deciduous_tree" style={{fontSize: 20, marginRight: 10}} /> Walk</Text>
+          <Text style={styles.selectionText}>
+            <Emoji
+              name="deciduous_tree"
+              style={{ fontSize: 20, marginRight: 10 }}
+            />{" "}
+            Walk
+          </Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.selectionStyle}>
-          <Text style={styles.selectionText}><Emoji name="rocket" style={{fontSize: 20, marginRight: 10}} /> Other</Text>
+          <Text style={styles.selectionText}>
+            <Emoji name="rocket" style={{ fontSize: 20, marginRight: 10 }} />{" "}
+            Other
+          </Text>
         </TouchableOpacity>
       </View>
       <View style={styles.viewButton}>

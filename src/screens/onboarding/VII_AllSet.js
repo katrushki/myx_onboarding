@@ -11,6 +11,7 @@ import {
   ImageBackground,
 } from "react-native";
 import Images from "../../../assets/Images";
+import LogoOBS from "../../components/LogoOBS";
 
 // Finalisation screen/ last onboarding screen
 
@@ -26,6 +27,7 @@ const AllSetOBS = ({ navigation }) => {
       resizeMethod={"auto"}
       style={styles.viewStyle}
     >
+      <LogoOBS />
       <View style={styles.viewHeaderStyle}>
         <Text style={styles.headerText}>You are all set</Text>
       </View>

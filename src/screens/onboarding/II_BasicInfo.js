@@ -11,12 +11,12 @@ import {
 } from "react-native";
 import Images from "../../../assets/Images";
 import { Ionicons } from "@expo/vector-icons";
+import LogoOBS from "../../components/LogoOBS";
 
 const BasicInfoOBS = ({ navigation }) => {
   navigation.setOptions({
     headerShown: false,
   });
-
 
   //implement useState function here to hold data input to make a request with axios
   return (
@@ -26,6 +26,7 @@ const BasicInfoOBS = ({ navigation }) => {
       resizeMethod="auto"
       style={styles.viewStyle}
     >
+      <LogoOBS />
       <View style={styles.viewHeader}>
         <Text style={styles.headerText}>Basic Info</Text>
       </View>
@@ -72,9 +73,10 @@ const BasicInfoOBS = ({ navigation }) => {
         </View>
       </View>
       <View style={styles.viewButton}>
-        <TouchableOpacity 
-          onPress= {()=> navigation.navigate('Expertise')}
-          style={styles.buttonStyle}>
+        <TouchableOpacity
+          onPress={() => navigation.navigate("Expertise")}
+          style={styles.buttonStyle}
+        >
           <Text style={styles.buttonText}>Skip</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.buttonStyle}>
@@ -110,7 +112,7 @@ const styles = StyleSheet.create({
     borderWidth: 0.5,
     borderRadius: 13,
     marginHorizontal: 10,
-    elevation: 5
+    elevation: 5,
   },
   viewButton: {
     flex: 1,

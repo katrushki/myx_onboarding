@@ -12,6 +12,7 @@ import {
   ImageBackground,
 } from "react-native";
 import Images from "../../../assets/Images";
+import LogoOBS from "../../components/LogoOBS";
 import BasicInfoOBS from "./II_BasicInfo";
 
 // onboarding screen I component creation
@@ -26,6 +27,7 @@ const WelcomeOBS = ({ navigation }) => {
       resizeMethod={"auto"}
       style={styles.viewStyle}
     >
+      <LogoOBS/>
       {/* <View style= {styles.viewImageStyle}>
         <Image 
           source = {Images.logo} 

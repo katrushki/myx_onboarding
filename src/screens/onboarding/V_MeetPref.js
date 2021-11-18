@@ -11,15 +11,12 @@ import {
 import Images from "../../../assets/Images";
 import { Ionicons } from "@expo/vector-icons";
 import Emoji from "react-native-emoji";
-import {
-  SelectMultipleButton,
-  SelectMultipleGroupButton,
-} from "react-native-selectmultiple-button";
 import LogoOBS from "../../components/LogoOBS";
+import BackButtonOBS from "../../components/backButtonOBS";
 
 const MeetPrefOBS = ({ navigation }) => {
   navigation.setOptions({
-    headerShown: false,
+    headerShown: false
   });
 
   return (
@@ -29,6 +26,7 @@ const MeetPrefOBS = ({ navigation }) => {
       resizeMethod="auto"
       style={styles.viewStyle}
     >
+      <BackButtonOBS />
       <LogoOBS />
       <View style={styles.viewHeader}>
         <Text style={styles.headerText}>How would you prefer to meet?</Text>

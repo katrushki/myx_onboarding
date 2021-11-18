@@ -15,10 +15,8 @@ import LogoOBS from "../../components/LogoOBS";
 import _ from 'lodash';
 
 
-const ExpertiseOBS = ({ navigation }) => {
-  navigation.setOptions({
-    headerShown: false,
-  });
+const ExpertiseOBS = () => {
+
   return (
     <ImageBackground
       source={Images.basicInfoBackground}

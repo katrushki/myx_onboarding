@@ -15,10 +15,7 @@ import LogoOBS from "../../components/LogoOBS";
 
 // Finalisation screen/ last onboarding screen
 
-const AllSetOBS = ({ navigation }) => {
-  navigation.setOptions({
-    headerShown: false,
-  });
+const AllSetOBS = () => {
 
   return (
     <ImageBackground

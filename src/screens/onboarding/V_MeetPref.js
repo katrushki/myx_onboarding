@@ -13,10 +13,7 @@ import { Ionicons } from "@expo/vector-icons";
 import Emoji from "react-native-emoji";
 import LogoOBS from "../../components/LogoOBS";
 
-const MeetPrefOBS = ({ navigation }) => {
-  navigation.setOptions({
-    headerShown: false,
-  });
+const MeetPrefOBS = () => {
 
   return (
     <ImageBackground

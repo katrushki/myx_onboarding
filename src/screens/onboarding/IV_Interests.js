@@ -15,10 +15,8 @@ import LogoOBS from "../../components/LogoOBS";
 import _ from 'lodash';
 import{SelectMultipleGroupButton} from 'react-native-selectmultiple-button';
 
-const InterestsOBS = ({ navigation }) => {
-  navigation.setOptions({
-    headerShown: false,
-  });
+const InterestsOBS = () => {
+
   return (
     <ImageBackground
       source={Images.basicInfoBackground}

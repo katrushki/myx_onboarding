@@ -15,10 +15,7 @@ import LogoOBS from "../../components/LogoOBS";
 import { ScrollView } from "react-native-gesture-handler";
 
 
-const MeetForOBS = ({ navigation }) => {
-  navigation.setOptions({
-    headerShown: false,
-  });
+const MeetForOBS = () => {
 
   return (
     <ImageBackground

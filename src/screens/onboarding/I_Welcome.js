@@ -16,10 +16,8 @@ import LogoOBS from "../../components/LogoOBS";
 import BasicInfoOBS from "./II_BasicInfo";
 
 // onboarding screen I component creation
-const WelcomeOBS = ({ navigation }) => {
-  navigation.setOptions({
-    headerShown: false,
-  });
+const WelcomeOBS = () => {
+
   return (
     <ImageBackground
       source={Images.background}
@@ -44,7 +42,7 @@ const WelcomeOBS = ({ navigation }) => {
       <View style={styles.viewButtonStyle}>
         <TouchableOpacity 
           style={styles.buttonStyle}
-          onPress= { () => navigation.navigate('MeetFor')}>
+          onPress= { () => navigation.navigate('Group')}>
           <Text style={styles.buttonText}>Born ready!</Text>
         </TouchableOpacity>
       </View>

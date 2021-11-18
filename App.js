@@ -18,28 +18,36 @@ const App = ()=> {
     <NavigationContainer>
       <AppNavigator.Navigator>
         <AppNavigator.Screen 
+          options = {{headerShown: false}}
           name='Welcome' 
           component ={WelcomeOBS} />
         <AppNavigator.Screen
+          options = {{headerShown: false}}
           name='BasicInfo'
           component= {BasicInfoOBS}
           />
         <AppNavigator.Screen
+          options = {{headerShown: false}}
           name= 'Expertise'
           component= {ExpertiseOBS}/>
         <AppNavigator.Screen
+          options = {{headerShown: false}}
           name= 'Interests'
           component= {InterestsOBS}/>
         <AppNavigator.Screen
+          options = {{headerShown: false}}
           name= 'MeetPref'
           component= {MeetPrefOBS}/>
         <AppNavigator.Screen
+          options = {{headerShown: false}}
           name= 'MeetFor'
           component= {MeetForOBS}/>
         <AppNavigator.Screen
+          options = {{headerShown: false}}
           name= 'AllSet'
           component= {AllSetOBS}/>
         <AppNavigator.Screen
+          options = {{headerShown: false}}
           name= 'Group'
           component= {GroupButton}/>
       </AppNavigator.Navigator>

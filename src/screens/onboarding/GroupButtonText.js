@@ -1,9 +1,10 @@
 import React, { Component } from "react";
 
-import { View, Text, StyleSheet, ScrollView } from "react-native";
+import { View, Text, StyleSheet, ScrollView, ImageBackground } from "react-native";
 
 import _ from "lodash";
 import { SelectMultipleGroupButton } from "react-native-selectmultiple-button";
+import Images from "../../../assets/Images";
 
 const techGroupData = [
   { value: "C/C++" },
@@ -47,16 +48,26 @@ const techGroupData = [
   { value: "Documentation" },
 ];
 
-const talentGroupData = [];
-const radioGroupData = [
-  { value: "Female", displayValue: "F" },
-  { value: "Male", displayValue: "M" },
-  { value: "Other", displayValue: "O" },
-  { value: "Rather not say", displayValue: "R" },
+const talentGroupData = [
+    { value: "Acquisition" },
+    { value: "Retention" },
+    { value: "Performance Management" },
+    { value: "Employer Branding" },
+    { value: "Training & Development" },
+    { value: "Promotion & Transition" },
+    { value: "Change Management" },
+    { value: "Organisational Behaviour" },
+    { value: "Upskilling" },
+    { value: "Reskilling" },
+    { value: "Engagement" },
+    { value: "Succession" },
+    { value: "Organisational Culture" },
+    { value: "Internal Mobility" },
+    { value: "Knowledge Management" },
+    { value: "Remuneration Strategy" }
 ];
 
-const defaultSelectedIndex_group_insterest = [0];
-const defaultSelectedIndex_group_gender = [1];
+const defaultSelectedIndex_group_insterest = [5];
 
 export default class GroupButton extends Component {
   constructor(props) {
@@ -70,32 +81,52 @@ export default class GroupButton extends Component {
     this.state = {
       multipleSelectedData: [],
       multipleSelectedDataLimited: [],
-      radioSelectedData: "",
       multipleSelectedData_group: selectedValues1,
-      multipleSelectedData_group_limited: [],
-      radioSelectedData_group:
-        radioGroupData[defaultSelectedIndex_group_gender[0]].value,
+      multipleSelectedData_group_limited: []
+
     };
-  }
+  };
 
   render() {
     return (
-      <View style={{ flex: 1 }}>
+      <ImageBackground
+        source={Images.basicInfoBackground}
+        resizeMode="cover"
+        resizeMethod="auto"
+        style={{ flex: 1 }}
+      >
         <ScrollView>
-          <Text style={{ color: "#EAA418", marginLeft: 10 }}>
+          <Text
+            style={{
+              fontFamily: "Roboto",
+              fontSize: 20,
+              fontWeight: 'bold',
+              paddingTop: 10,
+              color: "#FFF",
+              marginLeft: 10,
+            }}
+          >
             Tech
             {/* Tech expertise: {_.join(this.state.multipleSelectedData_group, ", ")} */}
           </Text>
           <SelectMultipleGroupButton
             defaultSelectedIndexes={defaultSelectedIndex_group_insterest}
-            containerViewStyle={{ justifyContent: "flex-start" }}
+            containerViewStyle={{
+              paddingTop: 10,
+              justifyContent: "flex-start",
+            }}
             highLightStyle={{
-              borderColor: "gray",
+              borderColor: "#FFF",
               backgroundColor: "transparent",
-              textColor: "gray",
-              borderTintColor: "#EAA418",
-              backgroundTintColor: "transparent",
-              textTintColor: "#EAA418",
+              textColor: "#FFF",
+              borderTintColor: "#FFF",
+              backgroundTintColor: "#FFF",
+              textTintColor: "#5E18EA",
+            }}
+            textStyle={{
+              textAlign: "center",
+              fontFamily: "Roboto",
+              fontSize: 15,
             }}
             onSelectedValuesChange={(selectedValues) =>
               this._groupButtonOnSelectedValuesChange(selectedValues)
@@ -103,54 +134,45 @@ export default class GroupButton extends Component {
             group={techGroupData}
           />
 
-          <Text style={{ color: "#EAA418", marginLeft: 10 }}>
-            Talent expertise: (max. 3){" "}
+          <Text
+            style={{
+              fontFamily: "Roboto",
+              fontSize: 20,
+              fontWeight: 'bold',
+              paddingTop: 10,
+              color: "#FFF",
+              marginLeft: 10,
+            }}
+          >
+            Talent (max. 3){" "}
             {_.join(this.state.multipleSelectedData_group_limited, ", ")}
           </Text>
           <SelectMultipleGroupButton
-            containerViewStyle={{ justifyContent: "flex-start" }}
+            containerViewStyle={{
+              paddingTop: 10,
+              justifyContent: "flex-start",
+            }}
             highLightStyle={{
-              borderColor: "gray",
+              borderColor: "#FFF",
               backgroundColor: "transparent",
-              textColor: "gray",
-              borderTintColor: "#EAA418",
-              backgroundTintColor: "transparent",
-              textTintColor: "#EAA418",
+              textColor: "#FFF",
+              borderTintColor: "#FFF",
+              backgroundTintColor: "#FFF",
+              textTintColor: "#5E18EA",
+            }}
+            textStyle={{
+              textAlign: "center",
+              fontFamily: "Roboto",
+              fontSize: 15,
             }}
             maximumNumberSelected={3}
             onSelectedValuesChange={(selectedValues) =>
               this._groupButtonOnSelectedValuesChange_limited(selectedValues)
             }
-            group={techGroupData}
-          />
-          <View style={{ height: 1, backgroundColor: "gray", marginTop: 20 }} />
-
-          <Text style={styles.welcome}>
-            implement the radio-select buttons demo by SelectMultipleGroupButton
-          </Text>
-          <Text style={{ color: "green", marginLeft: 10 }}>
-            I am {this.state.radioSelectedData_group}
-          </Text>
-          <SelectMultipleGroupButton
-            multiple={false}
-            defaultSelectedIndexes={defaultSelectedIndex_group_gender}
-            containerViewStyle={{ flexDirection: "column", width: 100 }}
-            highLightStyle={{
-              borderColor: "gray",
-              backgroundColor: "transparent",
-              textColor: "gray",
-              borderTintColor: "green",
-              backgroundTintColor: "green",
-              textTintColor: "white",
-            }}
-            buttonViewStyle={{ width: 40, height: 40, borderRadius: 20 }}
-            singleTap={(valueTap) => {
-              this._onRadioGroupButtonSingleTap(valueTap);
-            }}
-            group={radioGroupData}
+            group={talentGroupData}
           />
         </ScrollView>
-      </View>
+      </ImageBackground>
     );
   }
 
@@ -166,17 +188,13 @@ export default class GroupButton extends Component {
     });
   }
 
-  _onRadioGroupButtonSingleTap(valueTap) {
-    this.setState({
-      radioSelectedData_group: valueTap,
-    });
-  }
-}
+
+};
 
 const styles = StyleSheet.create({
   welcome: {
     margin: 10,
     // marginTop: 30,
-    color: "gray",
+    color: "#FFF",
   },
 });

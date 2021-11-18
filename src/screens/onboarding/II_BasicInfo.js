@@ -13,10 +13,7 @@ import Images from "../../../assets/Images";
 import { Ionicons } from "@expo/vector-icons";
 import LogoOBS from "../../components/LogoOBS";
 
-const BasicInfoOBS = ({ navigation }) => {
-  navigation.setOptions({
-    headerShown: false,
-  });
+const BasicInfoOBS = () => {
 
   //implement useState function here to hold data input to make a request with axios
   return (

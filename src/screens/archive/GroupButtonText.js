@@ -1,9 +1,18 @@
 import React, { Component } from "react";
 
-import { View, Text, StyleSheet, ScrollView, ImageBackground } from "react-native";
+import {
+  View,
+  Text,
+  StyleSheet,
+  ScrollView,
+  ImageBackground,
+  TouchableOpacity,
+} from "react-native";
 
 import _ from "lodash";
 import { SelectMultipleGroupButton } from "react-native-selectmultiple-button";
+import LogoOBS from "../../components/LogoOBS";
+import { Ionicons } from "@expo/vector-icons";
 import Images from "../../../assets/Images";
 
 const techGroupData = [
@@ -49,22 +58,22 @@ const techGroupData = [
 ];
 
 const talentGroupData = [
-    { value: "Acquisition" },
-    { value: "Retention" },
-    { value: "Performance Management" },
-    { value: "Employer Branding" },
-    { value: "Training & Development" },
-    { value: "Promotion & Transition" },
-    { value: "Change Management" },
-    { value: "Organisational Behaviour" },
-    { value: "Upskilling" },
-    { value: "Reskilling" },
-    { value: "Engagement" },
-    { value: "Succession" },
-    { value: "Organisational Culture" },
-    { value: "Internal Mobility" },
-    { value: "Knowledge Management" },
-    { value: "Remuneration Strategy" }
+  { value: "Acquisition" },
+  { value: "Retention" },
+  { value: "Performance Management" },
+  { value: "Employer Branding" },
+  { value: "Training & Development" },
+  { value: "Promotion & Transition" },
+  { value: "Change Management" },
+  { value: "Organisational Behaviour" },
+  { value: "Upskilling" },
+  { value: "Reskilling" },
+  { value: "Engagement" },
+  { value: "Succession" },
+  { value: "Organisational Culture" },
+  { value: "Internal Mobility" },
+  { value: "Knowledge Management" },
+  { value: "Remuneration Strategy" },
 ];
 
 const defaultSelectedIndex_group_insterest = [5];
@@ -82,10 +91,9 @@ export default class GroupButton extends Component {
       multipleSelectedData: [],
       multipleSelectedDataLimited: [],
       multipleSelectedData_group: selectedValues1,
-      multipleSelectedData_group_limited: []
-
+      multipleSelectedData_group_limited: [],
     };
-  };
+  }
 
   render() {
     return (
@@ -93,14 +101,42 @@ export default class GroupButton extends Component {
         source={Images.basicInfoBackground}
         resizeMode="cover"
         resizeMethod="auto"
-        style={{ flex: 1 }}
+        style={styles.viewStyle}
       >
-        <ScrollView>
+        {/**header navigation */}
+        <View style={{ flexDirection: "row", flex: 1 }}>
+          <View style={{ flex: 1 }}>
+            <TouchableOpacity
+              style={{ marginLeft: 50, marginTop: 50 }}
+              onPress={() => navigation.navigate("BasicInfo")}
+            >
+              <Ionicons
+                name="chevron-back-circle"
+                size={35}
+                style={styles.iconStyle}
+              />
+            </TouchableOpacity>
+          </View>
+          <View style={{ flex: 1 }}>
+            <LogoOBS />
+          </View>
+          <View style={{ flex: 1 }}></View>
+        </View>
+        {/**section text */}
+        <View style={styles.viewHeader}>
+          <Text style={styles.headerText}>
+            What are your areas of expertise?
+          </Text>
+          <Text style={styles.bodyText}>Select multiple options</Text>
+        </View>
+
+        {/**Group button implementation */}
+        <ScrollView style= {{flex: 4}}>
           <Text
             style={{
               fontFamily: "Roboto",
               fontSize: 20,
-              fontWeight: 'bold',
+              fontWeight: "bold",
               paddingTop: 10,
               color: "#FFF",
               marginLeft: 10,
@@ -138,7 +174,7 @@ export default class GroupButton extends Component {
             style={{
               fontFamily: "Roboto",
               fontSize: 20,
-              fontWeight: 'bold',
+              fontWeight: "bold",
               paddingTop: 10,
               color: "#FFF",
               marginLeft: 10,
@@ -172,6 +208,22 @@ export default class GroupButton extends Component {
             group={talentGroupData}
           />
         </ScrollView>
+        {/**bottom navigation */}
+        <View style={styles.viewButton}>
+          <TouchableOpacity
+            onPress={() => navigation.navigate("Interests")}
+            style={styles.buttonStyle}
+          >
+            <Text style={styles.buttonText}>Skip</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.buttonStyle}>
+            <Ionicons
+              name="chevron-forward-circle"
+              size={35}
+              style={styles.iconStyle}
+            />
+          </TouchableOpacity>
+        </View>
       </ImageBackground>
     );
   }
@@ -187,14 +239,53 @@ export default class GroupButton extends Component {
       multipleSelectedData_group_limited: selectedValues,
     });
   }
-
-
-};
+}
 
 const styles = StyleSheet.create({
-  welcome: {
-    margin: 10,
-    // marginTop: 30,
+  viewStyle: {
+    backgroundColor: "#5E18EA",
+    flexDirection: "column",
+    flex: 1,
+  },
+  viewButton: {
+    flex: 1,
+    alignItems: "flex-end",
+    flexDirection: "row",
+    justifyContent: "space-evenly",
+  },
+  viewHeader: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    borderBottomColor: "#FFF",
+    borderBottomWidth: 1,
+  },
+  buttonStyle: {
+    paddingHorizontal: 65,
+    paddingVertical: 30,
+  },
+  headerText: {
+    fontFamily: "Roboto",
+    fontSize: 30,
+    fontWeight: 300,
+    fontWeight: "bold",
     color: "#FFF",
+    textAlign: "center",
+  },
+  bodyText: {
+    fontFamily: "Roboto",
+    fontSize: 12,
+    color: "#FFF",
+    opacity: 0.75,
+  },
+  buttonText: {
+    fontFamily: "Roboto",
+    fontSize: 20,
+    opacity: 0.5,
+    color: "#FFF",
+  },
+  iconStyle: {
+    color: "#FFF",
+    opacity: 0.75,
   },
 });

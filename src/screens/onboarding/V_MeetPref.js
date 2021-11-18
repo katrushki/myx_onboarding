@@ -13,7 +13,7 @@ import { Ionicons } from "@expo/vector-icons";
 import Emoji from "react-native-emoji";
 import LogoOBS from "../../components/LogoOBS";
 
-const MeetPrefOBS = () => {
+const MeetPrefOBS = ({navigation}) => {
 
   return (
     <ImageBackground
@@ -22,6 +22,7 @@ const MeetPrefOBS = () => {
       resizeMethod="auto"
       style={styles.viewStyle}
     >
+  {/**header navigation */}
       <View style={{ flexDirection: "row", flex: 1 }}>
         <View style={{ flex: 1 }}>
           <TouchableOpacity
@@ -40,7 +41,7 @@ const MeetPrefOBS = () => {
         </View>
         <View style={{ flex: 1 }}></View>
       </View>
-
+  {/**clickable items  */}
       <View style={styles.viewHeader}>
         <Text style={styles.headerText}>How would you prefer to meet?</Text>
       </View>
@@ -64,6 +65,8 @@ const MeetPrefOBS = () => {
           </Text>
         </TouchableOpacity>
       </View>
+
+  {/**bottom navigation */}
       <View style={styles.viewButton}>
         <TouchableOpacity
           style={styles.buttonStyle}

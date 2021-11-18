@@ -15,7 +15,7 @@ import LogoOBS from "../../components/LogoOBS";
 import _ from 'lodash';
 import{SelectMultipleGroupButton} from 'react-native-selectmultiple-button';
 
-const InterestsOBS = () => {
+const InterestsOBS = ({navigation}) => {
 
   return (
     <ImageBackground
@@ -24,6 +24,7 @@ const InterestsOBS = () => {
       resizeMethod="auto"
       style={styles.viewStyle}
     >
+    {/**header navigation */}
       <View style= {{flexDirection: 'row', flex: 1}}>
         <View style= {{flex: 1 }}>
           <TouchableOpacity

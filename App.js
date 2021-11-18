@@ -8,7 +8,7 @@ import ExpertiseOBS from './src/screens/onboarding/III_Expertise';
 import InterestsOBS from './src/screens/onboarding/IV_Interests';
 import MeetPrefOBS from './src/screens/onboarding/V_MeetPref';
 import MeetForOBS from './src/screens/onboarding/VI_MeetFor';
-import GroupButton from './src/screens/onboarding/GroupButtonText';
+import GroupButton from './src/screens/archive/GroupButtonText';
 
 
 const AppNavigator = createNativeStackNavigator();

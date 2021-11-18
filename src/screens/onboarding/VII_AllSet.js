@@ -15,7 +15,7 @@ import LogoOBS from "../../components/LogoOBS";
 
 // Finalisation screen/ last onboarding screen
 
-const AllSetOBS = () => {
+const AllSetOBS = ({navigation}) => {
 
   return (
     <ImageBackground

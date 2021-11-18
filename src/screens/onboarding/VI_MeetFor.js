@@ -25,7 +25,26 @@ const MeetForOBS = ({ navigation }) => {
       resizeMethod="auto"
       style={styles.viewStyle}
     >
-      <LogoOBS />
+      <View style= {{flexDirection: 'row', flex: 1}}>
+        <View style= {{flex: 1 }}>
+          <TouchableOpacity
+            style={{marginLeft: 50, marginTop: 50}}
+            onPress={() => navigation.navigate("MeetPref")}
+          >
+            <Ionicons
+              name="chevron-back-circle"
+              size={35}
+              style={styles.iconStyle}
+            />
+          </TouchableOpacity>
+        </View>
+        <View 
+          style= {{flex: 1}}>
+          <LogoOBS />
+        </View>
+        <View
+          style= {{flex: 1}}></View>
+      </View>
       <View style={styles.viewHeader}>
         <Text style={styles.headerText}>Let's meet for ...</Text>
         <Text style={styles.bodyText}>Multiple selection possible</Text>

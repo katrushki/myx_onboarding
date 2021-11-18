@@ -44,7 +44,7 @@ const WelcomeOBS = ({ navigation }) => {
       <View style={styles.viewButtonStyle}>
         <TouchableOpacity 
           style={styles.buttonStyle}
-          onPress= { () => navigation.navigate('MeetPref')}>
+          onPress= { () => navigation.navigate('Expertise')}>
           <Text style={styles.buttonText}>Born ready!</Text>
         </TouchableOpacity>
       </View>
@@ -60,7 +60,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   viewHeaderStyle: {
-    flex: 2,
+    flex: 1.5,
     justifyContent: "flex-end",
     alignItems: "center",
     paddingVertical: 20,

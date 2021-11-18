@@ -12,7 +12,6 @@ import Images from "../../../assets/Images";
 import { Ionicons } from "@expo/vector-icons";
 import Emoji from "react-native-emoji";
 import LogoOBS from "../../components/LogoOBS";
-import BackButtonOBS from "../../components/backButtonOBS";
 
 const MeetPrefOBS = ({ navigation }) => {
   navigation.setOptions({
@@ -26,8 +25,27 @@ const MeetPrefOBS = ({ navigation }) => {
       resizeMethod="auto"
       style={styles.viewStyle}
     >
-      <BackButtonOBS />
-      <LogoOBS />
+      <View style= {{flexDirection: 'row', flex: 1}}>
+        <View style= {{flex: 1 }}>
+          <TouchableOpacity
+            style={{marginLeft: 50, marginTop: 50}}
+            onPress={() => navigation.navigate("Interests")}
+          >
+            <Ionicons
+              name="chevron-back-circle"
+              size={35}
+              style={styles.iconStyle}
+            />
+          </TouchableOpacity>
+        </View>
+        <View 
+          style= {{flex: 1}}>
+          <LogoOBS />
+        </View>
+        <View
+          style= {{flex: 1}}></View>
+      </View>
+      
       <View style={styles.viewHeader}>
         <Text style={styles.headerText}>How would you prefer to meet?</Text>
       </View>
@@ -108,7 +126,7 @@ const styles = StyleSheet.create({
   },
   buttonStyle: {
     paddingHorizontal: 65,
-    paddingVertical: 30,
+    paddingVertical: 35,
   },
   headerText: {
     fontFamily: "Roboto",

@@ -9,9 +9,11 @@ import {
   ImageBackground,
 } from "react-native";
 import Images from "../../../assets/Images";
-import { Ionicons } from "@expo/vector-icons";
+import { Ionicons, AntDesign  } from "@expo/vector-icons";
 import Emoji from "react-native-emoji";
 import LogoOBS from "../../components/LogoOBS";
+import { ScrollView } from "react-native-gesture-handler";
+
 
 const MeetForOBS = ({ navigation }) => {
   navigation.setOptions({
@@ -25,10 +27,11 @@ const MeetForOBS = ({ navigation }) => {
       resizeMethod="auto"
       style={styles.viewStyle}
     >
-      <View style= {{flexDirection: 'row', flex: 1}}>
-        <View style= {{flex: 1 }}>
+  {/**header navigation */}
+      <View style={{ flexDirection: "row", flex: 1 }}>
+        <View style={{ flex: 1 }}>
           <TouchableOpacity
-            style={{marginLeft: 50, marginTop: 50}}
+            style={{ marginLeft: 50, marginTop: 50 }}
             onPress={() => navigation.navigate("MeetPref")}
           >
             <Ionicons
@@ -38,13 +41,12 @@ const MeetForOBS = ({ navigation }) => {
             />
           </TouchableOpacity>
         </View>
-        <View 
-          style= {{flex: 1}}>
+        <View style={{ flex: 1 }}>
           <LogoOBS />
         </View>
-        <View
-          style= {{flex: 1}}></View>
+        <View style={{ flex: 1 }}></View>
       </View>
+  {/**clickable items  */}
       <View style={styles.viewHeader}>
         <Text style={styles.headerText}>Let's meet for ...</Text>
         <Text style={styles.bodyText}>Multiple selection possible</Text>
@@ -93,6 +95,8 @@ const MeetForOBS = ({ navigation }) => {
           </Text>
         </TouchableOpacity>
       </View>
+      
+  {/**bottom navigation */}
       <View style={styles.viewButton}>
         <TouchableOpacity
           style={styles.buttonStyle}
@@ -101,8 +105,8 @@ const MeetForOBS = ({ navigation }) => {
           <Text style={styles.buttonText}>Skip</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.buttonStyle}>
-          <Ionicons
-            name="chevron-forward-circle"
+          <AntDesign
+            name="checkcircle"
             size={35}
             style={styles.iconStyle}
           />

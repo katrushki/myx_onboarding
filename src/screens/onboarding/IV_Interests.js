@@ -12,6 +12,8 @@ import {
 import Images from "../../../assets/Images";
 import { Ionicons } from "@expo/vector-icons";
 import LogoOBS from "../../components/LogoOBS";
+import _ from 'lodash';
+import{SelectMultipleGroupButton} from 'react-native-selectmultiple-button';
 
 const InterestsOBS = ({ navigation }) => {
   navigation.setOptions({
@@ -46,7 +48,7 @@ const InterestsOBS = ({ navigation }) => {
       </View>
       <View style={styles.viewHeader}>
         <Text style={styles.headerText}>What are your interests?</Text>
-        <Text>Select multiple options</Text>
+        <Text style={styles.bodyText}>Select multiple options</Text>
       </View>
       <View style={styles.viewButton}>
         <TouchableOpacity
@@ -96,6 +98,13 @@ const styles = StyleSheet.create({
     fontWeight: 300,
     fontWeight: "bold",
     color: "#FFF",
+    textAlign: 'center'
+  },
+  bodyText: {
+    fontFamily: 'Roboto',
+    fontSize: 12,
+    color: '#FFF',
+    opacity: 0.75
   },
   buttonText: {
     fontFamily: "Roboto",

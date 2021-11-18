@@ -12,6 +12,8 @@ import {
 import Images from "../../../assets/Images";
 import { Ionicons } from "@expo/vector-icons";
 import LogoOBS from "../../components/LogoOBS";
+import _ from 'lodash';
+
 
 const ExpertiseOBS = ({ navigation }) => {
   navigation.setOptions({
@@ -46,7 +48,7 @@ const ExpertiseOBS = ({ navigation }) => {
       </View>
       <View style={styles.viewHeader}>
         <Text style={styles.headerText}>What are your areas of expertise?</Text>
-        <Text>Select multiple options</Text>
+        <Text style={styles.bodyText}>Select multiple options</Text>
       </View>
       <View style={styles.viewButton}>
         <TouchableOpacity
@@ -97,6 +99,12 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     color: "#FFF",
     textAlign: 'center'
+  },
+  bodyText: {
+    fontFamily: 'Roboto',
+    fontSize: 12,
+    color: '#FFF',
+    opacity: 0.75
   },
   buttonText: {
     fontFamily: "Roboto",

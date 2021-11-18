@@ -15,7 +15,7 @@ import LogoOBS from "../../components/LogoOBS";
 
 const MeetPrefOBS = ({ navigation }) => {
   navigation.setOptions({
-    headerShown: false
+    headerShown: false,
   });
 
   return (
@@ -25,10 +25,10 @@ const MeetPrefOBS = ({ navigation }) => {
       resizeMethod="auto"
       style={styles.viewStyle}
     >
-      <View style= {{flexDirection: 'row', flex: 1}}>
-        <View style= {{flex: 1 }}>
+      <View style={{ flexDirection: "row", flex: 1 }}>
+        <View style={{ flex: 1 }}>
           <TouchableOpacity
-            style={{marginLeft: 50, marginTop: 50}}
+            style={{ marginLeft: 50, marginTop: 50 }}
             onPress={() => navigation.navigate("Interests")}
           >
             <Ionicons
@@ -38,14 +38,12 @@ const MeetPrefOBS = ({ navigation }) => {
             />
           </TouchableOpacity>
         </View>
-        <View 
-          style= {{flex: 1}}>
+        <View style={{ flex: 1 }}>
           <LogoOBS />
         </View>
-        <View
-          style= {{flex: 1}}></View>
+        <View style={{ flex: 1 }}></View>
       </View>
-      
+
       <View style={styles.viewHeader}>
         <Text style={styles.headerText}>How would you prefer to meet?</Text>
       </View>

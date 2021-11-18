@@ -104,7 +104,7 @@ export default class GroupButton extends Component {
         style={styles.viewStyle}
       >
         {/**header navigation */}
-        <View style={{ flexDirection: "row", flex: 1 }}>
+        <View style={{ flexDirection: "row", flex: 0.25 }}>
           <View style={{ flex: 1 }}>
             <TouchableOpacity
               style={{ marginLeft: 50, marginTop: 50 }}
@@ -131,7 +131,7 @@ export default class GroupButton extends Component {
         </View>
 
         {/**Group button implementation */}
-        <ScrollView style= {{flex: 4}}>
+        <ScrollView style= {{flex: 6}}>
           <Text
             style={{
               fontFamily: "Roboto",
@@ -248,14 +248,14 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   viewButton: {
-    flex: 1,
+    flex: 0.2,
     alignItems: "flex-end",
     flexDirection: "row",
     justifyContent: "space-evenly",
   },
   viewHeader: {
-    flex: 1,
-    justifyContent: "center",
+    flex: 0.25,
+    justifyContent: "flex-start",
     alignItems: "center",
     borderBottomColor: "#FFF",
     borderBottomWidth: 1,

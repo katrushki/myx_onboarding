@@ -15,78 +15,6 @@ import LogoOBS from "../../components/LogoOBS";
 import { Ionicons } from "@expo/vector-icons";
 import Images from "../../../assets/Images";
 
-const interestGroupData = [
-  { value: "Fishing" },
-  { value: "Instagram" },
-  { value: "Cooking" },
-  { value: "Cycling" },
-  { value: "Volunteering" },
-  { value: "Swimming" },
-  { value: "Surfing" },
-  { value: "Flea Markets" },
-  { value: "Blogging" },
-  { value: "Vlogging" },
-  { value: "Travel" },
-  { value: "Vegetarian" },
-  { value: "Vegan" },
-  { value: "Snowboarding" },
-  { value: "Skiing" },
-  { value: "Golf" },
-  { value: "Theater" },
-  { value: "Climbing" },
-  { value: "Walking" },
-  { value: "Museum" },
-  { value: "Tea" },
-  { value: "Coffee" },
-  { value: "Craft Beer" },
-  { value: "Hiking" },
-  { value: "Crossfit" },
-  { value: "Running" },
-  { value: "Activism" },
-  { value: "Football" },
-  { value: "Fashion" },
-  { value: "Gaming" },
-  { value: "Dancing" },
-  { value: "Comedy" },
-  { value: "Trivia" },
-  { value: "Culture" },
-  { value: "Foodie" },
-  { value: "Photography" },
-  { value: "Rock" },
-  { value: "Heavy Metal" },
-  { value: "Punk" },
-  { value: "Pop" },
-  { value: "Country" },
-  { value: "R&B" },
-  { value: "Soul" },
-  { value: "Jazz" },
-  { value: "Folk" },
-  { value: "Electronic" },
-  { value: "Classical" },
-  { value: "Hip Hop" },
-  { value: "Blues" },
-  { value: "Funk" },
-  { value: "Techno" },
-  { value: "Reading" },
-  { value: "Movies" },
-  { value: "Outdoors" },
-  { value: "Netflix" },
-  { value: "Festivals" },
-  { value: "Art" },
-  { value: "Meditation" },
-  { value: "Environmentalism" },
-  { value: "Basketball" },
-  { value: "Volleyball" },
-  { value: "Handball" },
-  { value: "Hockey" },
-  { value: "Baking" },
-  { value: "Yoga" },
-  { value: "Board Games" },
-  { value: "Concerts" },
-
-
-];
-
 const defaultSelectedIndex_group_insterest = [5];
 
 export default class GroupButton2 extends Component {
@@ -119,7 +47,7 @@ export default class GroupButton2 extends Component {
           <View style={{ flex: 1 }}>
             <TouchableOpacity
               style={{ marginLeft: 50, marginTop: 50 }}
-              onPress={() => navigation.navigate("BasicInfo")}
+              onPress={() => this.props.navigation.navigate("ExpertiseGB")}
             >
               <Ionicons
                 name="chevron-back-circle"
@@ -187,7 +115,7 @@ export default class GroupButton2 extends Component {
         {/**bottom navigation */}
         <View style={styles.viewButton}>
           <TouchableOpacity
-            onPress={() => navigation.navigate("Interests")}
+            onPress={() => this.props.navigation.navigate("MeetPref")}
             style={styles.buttonStyle}
           >
             <Text style={styles.buttonText}>Skip</Text>
@@ -265,3 +193,73 @@ const styles = StyleSheet.create({
     opacity: 0.75,
   },
 });
+
+const interestGroupData = [
+  { value: "Fishing" },
+  { value: "Instagram" },
+  { value: "Cooking" },
+  { value: "Cycling" },
+  { value: "Volunteering" },
+  { value: "Swimming" },
+  { value: "Surfing" },
+  { value: "Flea Markets" },
+  { value: "Blogging" },
+  { value: "Vlogging" },
+  { value: "Travel" },
+  { value: "Vegetarian" },
+  { value: "Vegan" },
+  { value: "Snowboarding" },
+  { value: "Skiing" },
+  { value: "Golf" },
+  { value: "Theater" },
+  { value: "Climbing" },
+  { value: "Walking" },
+  { value: "Museum" },
+  { value: "Tea" },
+  { value: "Coffee" },
+  { value: "Craft Beer" },
+  { value: "Hiking" },
+  { value: "Crossfit" },
+  { value: "Running" },
+  { value: "Activism" },
+  { value: "Football" },
+  { value: "Fashion" },
+  { value: "Gaming" },
+  { value: "Dancing" },
+  { value: "Comedy" },
+  { value: "Trivia" },
+  { value: "Culture" },
+  { value: "Foodie" },
+  { value: "Photography" },
+  { value: "Rock" },
+  { value: "Heavy Metal" },
+  { value: "Punk" },
+  { value: "Pop" },
+  { value: "Country" },
+  { value: "R&B" },
+  { value: "Soul" },
+  { value: "Jazz" },
+  { value: "Folk" },
+  { value: "Electronic" },
+  { value: "Classical" },
+  { value: "Hip Hop" },
+  { value: "Blues" },
+  { value: "Funk" },
+  { value: "Techno" },
+  { value: "Reading" },
+  { value: "Movies" },
+  { value: "Outdoors" },
+  { value: "Netflix" },
+  { value: "Festivals" },
+  { value: "Art" },
+  { value: "Meditation" },
+  { value: "Environmentalism" },
+  { value: "Basketball" },
+  { value: "Volleyball" },
+  { value: "Handball" },
+  { value: "Hockey" },
+  { value: "Baking" },
+  { value: "Yoga" },
+  { value: "Board Games" },
+  { value: "Concerts" },
+];

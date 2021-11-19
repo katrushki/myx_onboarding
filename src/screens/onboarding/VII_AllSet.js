@@ -43,7 +43,7 @@ const AllSetOBS = ({navigation}) => {
 // application of styling within the StyleSheet
 const styles = StyleSheet.create({
   viewStyle: {
-    backgroundColor: "#5E18EA",
+    // backgroundColor: "#5E18EA",
     flexDirection: "column",
     flex: 1,
   },

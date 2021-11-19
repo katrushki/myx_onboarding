@@ -88,7 +88,7 @@ const MeetPrefOBS = ({navigation}) => {
 
 const styles = StyleSheet.create({
   viewStyle: {
-    backgroundColor: "#5E18EA",
+    // backgroundColor: "#5E18EA",
     flexDirection: "column",
     flex: 1,
   },

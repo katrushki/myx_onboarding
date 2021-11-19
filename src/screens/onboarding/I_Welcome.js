@@ -13,7 +13,6 @@ import {
 } from "react-native";
 import Images from "../../../assets/Images";
 import LogoOBS from "../../components/LogoOBS";
-import BasicInfoOBS from "./II_BasicInfo";
 
 // onboarding screen I component creation
 const WelcomeOBS = ({navigation}) => {
@@ -42,7 +41,7 @@ const WelcomeOBS = ({navigation}) => {
       <View style={styles.viewButtonStyle}>
         <TouchableOpacity 
           style={styles.buttonStyle}
-          onPress= { () => navigation.navigate('ExpertiseGB')}>
+          onPress= { () => navigation.navigate('BasicInfo')}>
           <Text style={styles.buttonText}>Born ready!</Text>
         </TouchableOpacity>
       </View>
@@ -53,7 +52,7 @@ const WelcomeOBS = ({navigation}) => {
 // application of styling within the StyleSheet
 const styles = StyleSheet.create({
   viewStyle: {
-    backgroundColor: "#5E18EA",
+    // backgroundColor: "#5E18EA",
     flexDirection: "column",
     flex: 1,
   },

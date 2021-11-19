@@ -47,14 +47,6 @@ const App = ()=> {
           options = {{headerShown: false}}
           name= 'AllSet'
           component= {AllSetOBS}/>
-        <AppNavigator.Screen
-          options = {{headerShown: false}}
-          name= 'ExpertiseGB'
-          component= {GroupButton1}/>
-        <AppNavigator.Screen
-          options = {{headerShown: false}}
-          name= 'InterestsGB'
-          component= {GroupButton2}/>
       </AppNavigator.Navigator>
     </NavigationContainer>
   )

@@ -14,8 +14,6 @@ import { SelectMultipleGroupButton } from "react-native-selectmultiple-button";
 import LogoOBS from "../../components/LogoOBS";
 import { Ionicons } from "@expo/vector-icons";
 import Images from "../../../assets/Images";
-import { useNavigation } from "@react-navigation/core";
-
 
 const defaultSelectedIndex_group_interest = [];
 
@@ -35,9 +33,8 @@ export default class GroupButton1 extends Component {
       multipleSelectedData_group_limited: [],
     };
   }
-  
+
   render() {
-    const navigation = useNavigation();
     return (
       <ImageBackground
         source={Images.basicInfoBackground}
@@ -50,7 +47,7 @@ export default class GroupButton1 extends Component {
           <View style={{ flex: 1 }}>
             <TouchableOpacity
               style={{ marginLeft: 50, marginTop: 50 }}
-              onPress={() => navigation.navigate("BasicInfo")}
+              onPress={() => this.props.navigation.navigate("BasicInfo")}
             >
               <Ionicons
                 name="chevron-back-circle"
@@ -73,7 +70,7 @@ export default class GroupButton1 extends Component {
         </View>
 
         {/**Group button implementation */}
-        <ScrollView style= {{flex: 6}}>
+        <ScrollView style={{ flex: 6 }}>
           <Text
             style={{
               fontFamily: "Roboto",
@@ -106,8 +103,9 @@ export default class GroupButton1 extends Component {
               fontFamily: "Roboto",
               fontSize: 15,
             }}
-            buttonViewStyle= {{
-              borderRadius: 13}}
+            buttonViewStyle={{
+              borderRadius: 13,
+            }}
             onSelectedValuesChange={(selectedValues) =>
               this._groupButtonOnSelectedValuesChange(selectedValues)
             }
@@ -124,7 +122,8 @@ export default class GroupButton1 extends Component {
               marginLeft: 10,
             }}
           >
-            Talent </Text>
+            Talent{" "}
+          </Text>
           <SelectMultipleGroupButton
             containerViewStyle={{
               paddingVertical: 10,
@@ -143,15 +142,16 @@ export default class GroupButton1 extends Component {
               fontFamily: "Roboto",
               fontSize: 15,
             }}
-            buttonViewStyle= {{
-              borderRadius: 13}}
+            buttonViewStyle={{
+              borderRadius: 13,
+            }}
             // maximumNumberSelected={5}
             onSelectedValuesChange={(selectedValues) =>
               this._groupButtonOnSelectedValuesChange_limited(selectedValues)
             }
             group={talentGroupData}
           />
-                    <Text
+          <Text
             style={{
               fontFamily: "Roboto",
               fontSize: 20,
@@ -182,14 +182,15 @@ export default class GroupButton1 extends Component {
               fontFamily: "Roboto",
               fontSize: 15,
             }}
-            buttonViewStyle= {{
-              borderRadius: 13}}
+            buttonViewStyle={{
+              borderRadius: 13,
+            }}
             onSelectedValuesChange={(selectedValues) =>
               this._groupButtonOnSelectedValuesChange(selectedValues)
             }
             group={managementGroupData}
           />
-                    <Text
+          <Text
             style={{
               fontFamily: "Roboto",
               fontSize: 20,
@@ -200,7 +201,6 @@ export default class GroupButton1 extends Component {
             }}
           >
             Design
-            {/* Tech expertise: {_.join(this.state.multipleSelectedData_group, ", ")} */}
           </Text>
           <SelectMultipleGroupButton
             defaultSelectedIndexes={defaultSelectedIndex_group_interest}
@@ -221,15 +221,16 @@ export default class GroupButton1 extends Component {
               fontFamily: "Roboto",
               fontSize: 15,
             }}
-            buttonViewStyle= {{
-              borderRadius: 13}}
+            buttonViewStyle={{
+              borderRadius: 13,
+            }}
             onSelectedValuesChange={(selectedValues) =>
               this._groupButtonOnSelectedValuesChange(selectedValues)
             }
             group={designGroupData}
           />
 
-<Text
+          <Text
             style={{
               fontFamily: "Roboto",
               fontSize: 20,
@@ -240,7 +241,6 @@ export default class GroupButton1 extends Component {
             }}
           >
             Marketing & Sales
-            {/* Tech expertise: {_.join(this.state.multipleSelectedData_group, ", ")} */}
           </Text>
           <SelectMultipleGroupButton
             defaultSelectedIndexes={defaultSelectedIndex_group_interest}
@@ -261,14 +261,15 @@ export default class GroupButton1 extends Component {
               fontFamily: "Roboto",
               fontSize: 15,
             }}
-            buttonViewStyle= {{
-              borderRadius: 13}}
+            buttonViewStyle={{
+              borderRadius: 13,
+            }}
             onSelectedValuesChange={(selectedValues) =>
               this._groupButtonOnSelectedValuesChange(selectedValues)
             }
             group={marketing_salesGroupData}
           />
-                    <Text
+          <Text
             style={{
               fontFamily: "Roboto",
               fontSize: 20,
@@ -279,7 +280,6 @@ export default class GroupButton1 extends Component {
             }}
           >
             Finance
-            {/* Tech expertise: {_.join(this.state.multipleSelectedData_group, ", ")} */}
           </Text>
           <SelectMultipleGroupButton
             defaultSelectedIndexes={defaultSelectedIndex_group_interest}
@@ -300,14 +300,15 @@ export default class GroupButton1 extends Component {
               fontFamily: "Roboto",
               fontSize: 15,
             }}
-            buttonViewStyle= {{
-              borderRadius: 13}}
+            buttonViewStyle={{
+              borderRadius: 13,
+            }}
             onSelectedValuesChange={(selectedValues) =>
               this._groupButtonOnSelectedValuesChange(selectedValues)
             }
             group={financeGroupData}
           />
-                    <Text
+          <Text
             style={{
               fontFamily: "Roboto",
               fontSize: 20,
@@ -318,7 +319,6 @@ export default class GroupButton1 extends Component {
             }}
           >
             Product
-            {/* Tech expertise: {_.join(this.state.multipleSelectedData_group, ", ")} */}
           </Text>
           <SelectMultipleGroupButton
             defaultSelectedIndexes={defaultSelectedIndex_group_interest}
@@ -339,8 +339,9 @@ export default class GroupButton1 extends Component {
               fontFamily: "Roboto",
               fontSize: 15,
             }}
-            buttonViewStyle= {{
-              borderRadius: 13}}
+            buttonViewStyle={{
+              borderRadius: 13,
+            }}
             onSelectedValuesChange={(selectedValues) =>
               this._groupButtonOnSelectedValuesChange(selectedValues)
             }
@@ -350,7 +351,7 @@ export default class GroupButton1 extends Component {
         {/**bottom navigation */}
         <View style={styles.viewButton}>
           <TouchableOpacity
-            onPress={() => navigation.navigate("Interests")}
+            onPress={() => this.props.navigation.navigate("Interests")}
             style={styles.buttonStyle}
           >
             <Text style={styles.buttonText}>Skip</Text>
@@ -428,7 +429,6 @@ const styles = StyleSheet.create({
     opacity: 0.75,
   },
 });
-
 
 // list of arrays
 
@@ -683,7 +683,6 @@ const financeGroupData = [
   { value: "Investments" },
   { value: "Mergers and Aquisitions" },
   { value: "Taxation" },
-
 ];
 
 const productGroupData = [
@@ -709,4 +708,4 @@ const productGroupData = [
   { value: "User Life Cycle Management" },
   { value: "User Experience Management" },
   { value: "Strategic Planning" },
-]; 
+];

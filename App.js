@@ -8,7 +8,8 @@ import ExpertiseOBS from './src/screens/onboarding/III_Expertise';
 import InterestsOBS from './src/screens/onboarding/IV_Interests';
 import MeetPrefOBS from './src/screens/onboarding/V_MeetPref';
 import MeetForOBS from './src/screens/onboarding/VI_MeetFor';
-import GroupButton from './src/screens/archive/GroupButtonText';
+import GroupButton1 from './src/screens/archive/Expertise_GB';
+import GroupButton2 from './src/screens/archive/Interest_GB';
 
 
 const AppNavigator = createNativeStackNavigator();
@@ -48,8 +49,12 @@ const App = ()=> {
           component= {AllSetOBS}/>
         <AppNavigator.Screen
           options = {{headerShown: false}}
-          name= 'Group'
-          component= {GroupButton}/>
+          name= 'ExpertiseGB'
+          component= {GroupButton1}/>
+        <AppNavigator.Screen
+          options = {{headerShown: false}}
+          name= 'InterestsGB'
+          component= {GroupButton2}/>
       </AppNavigator.Navigator>
     </NavigationContainer>
   )

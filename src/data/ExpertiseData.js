@@ -1,5 +1,63 @@
-import React from 'react';
-import {View, Text} from 'react-native';
+const techGroupData = [
+    { value: "C/C++" },
+    { value: "C#" },
+    { value: "Flutter" },
+    { value: "Java" },
+    { value: "Javascript" },
+    { value: "Perl" },
+    { value: "PHP" },
+    { value: "Python" },
+    { value: "Swift" },
+    { value: "Go" },
+    { value: "SQL" },
+    { value: "R" },
+    { value: "React Native" },
+    { value: "Ruby" },
+    { value: "Rust" },
+    { value: "Solidity" },
+    { value: "Tableau" },
+    { value: "Google Suite" },
+    { value: "Trello" },
+    { value: "Slack" },
+    { value: "JIRA" },
+    { value: "Salesforce" },
+    { value: "Scrum" },
+    { value: "Agile Methodology" },
+    { value: "QA testing" },
+    { value: "Requirements Engineering" },
+    { value: "Debugging" },
+    { value: "Implementation" },
+    { value: "Testing" },
+    { value: "Configuration" },
+    { value: "Mobile Development" },
+    { value: "Machine Learning" },
+    { value: "Blockchain" },
+    { value: "Security" },
+    { value: "Algorithms" },
+    { value: "Data Science" },
+    { value: "Modeling" },
+    { value: "Documentation" },
+  ];
+  
+  const talentGroupData = [
+    { value: "Acquisition" },
+    { value: "Retention" },
+    { value: "Performance Management" },
+    { value: "Employer Branding" },
+    { value: "Training & Development" },
+    { value: "Promotion & Transition" },
+    { value: "Change Management" },
+    { value: "Organisational Behaviour" },
+    { value: "Upskilling" },
+    { value: "Reskilling" },
+    { value: "Engagement" },
+    { value: "Succession" },
+    { value: "Organisational Culture" },
+    { value: "Internal Mobility" },
+    { value: "Intercultural Management" },
+    { value: "Knowledge Management" },
+    { value: "Remuneration Strategy" },
+  ];
 
 const managementGroupData = [
     { value: "Accuracy" },
@@ -225,4 +283,4 @@ const productGroupData = [
     { value: "Strategic Planning" },
 ]; 
 
-export default (managementGroupData, marketing_salesGroupData, designGroupData, financeGroupData, operationsGroupData, productGroupData);
+export default (techGroupData, talentGroupData, managementGroupData, marketing_salesGroupData, designGroupData, financeGroupData, productGroupData);

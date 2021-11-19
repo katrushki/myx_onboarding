@@ -15,76 +15,87 @@ import LogoOBS from "../../components/LogoOBS";
 import { Ionicons } from "@expo/vector-icons";
 import Images from "../../../assets/Images";
 
-const techGroupData = [
-  { value: "C/C++" },
-  { value: "C#" },
-  { value: "Flutter" },
-  { value: "Java" },
-  { value: "Javascript" },
-  { value: "Perl" },
-  { value: "PHP" },
-  { value: "Python" },
-  { value: "Swift" },
-  { value: "Go" },
-  { value: "SQL" },
-  { value: "R" },
-  { value: "React Native" },
-  { value: "Ruby" },
-  { value: "Rust" },
-  { value: "Solidity" },
-  { value: "Tableau" },
-  { value: "Google Suite" },
-  { value: "Trello" },
-  { value: "Slack" },
-  { value: "JIRA" },
-  { value: "Salesforce" },
-  { value: "Scrum" },
-  { value: "Agile Methodology" },
-  { value: "QA testing" },
-  { value: "Requirements Engineering" },
-  { value: "Debugging" },
-  { value: "Implementation" },
-  { value: "Testing" },
-  { value: "Configuration" },
-  { value: "Mobile Development" },
-  { value: "Machine Learning" },
-  { value: "Blockchain" },
-  { value: "Security" },
-  { value: "Algorithms" },
-  { value: "Data Science" },
-  { value: "Modeling" },
-  { value: "Documentation" },
-];
+const interestGroupData = [
+  { value: "Fishing" },
+  { value: "Instagram" },
+  { value: "Cooking" },
+  { value: "Cycling" },
+  { value: "Volunteering" },
+  { value: "Swimming" },
+  { value: "Surfing" },
+  { value: "Flea Markets" },
+  { value: "Blogging" },
+  { value: "Vlogging" },
+  { value: "Travel" },
+  { value: "Vegetarian" },
+  { value: "Vegan" },
+  { value: "Snowboarding" },
+  { value: "Skiing" },
+  { value: "Golf" },
+  { value: "Theater" },
+  { value: "Climbing" },
+  { value: "Walking" },
+  { value: "Museum" },
+  { value: "Tea" },
+  { value: "Coffee" },
+  { value: "Craft Beer" },
+  { value: "Hiking" },
+  { value: "Crossfit" },
+  { value: "Running" },
+  { value: "Activism" },
+  { value: "Football" },
+  { value: "Fashion" },
+  { value: "Gaming" },
+  { value: "Dancing" },
+  { value: "Comedy" },
+  { value: "Trivia" },
+  { value: "Culture" },
+  { value: "Foodie" },
+  { value: "Photography" },
+  { value: "Rock" },
+  { value: "Heavy Metal" },
+  { value: "Punk" },
+  { value: "Pop" },
+  { value: "Country" },
+  { value: "R&B" },
+  { value: "Soul" },
+  { value: "Jazz" },
+  { value: "Folk" },
+  { value: "Electronic" },
+  { value: "Classical" },
+  { value: "Hip Hop" },
+  { value: "Blues" },
+  { value: "Funk" },
+  { value: "Techno" },
+  { value: "Reading" },
+  { value: "Movies" },
+  { value: "Outdoors" },
+  { value: "Netflix" },
+  { value: "Festivals" },
+  { value: "Art" },
+  { value: "Meditation" },
+  { value: "Environmentalism" },
+  { value: "Basketball" },
+  { value: "Volleyball" },
+  { value: "Handball" },
+  { value: "Hockey" },
+  { value: "Baking" },
+  { value: "Yoga" },
+  { value: "Board Games" },
+  { value: "Concerts" },
 
-const talentGroupData = [
-  { value: "Acquisition" },
-  { value: "Retention" },
-  { value: "Performance Management" },
-  { value: "Employer Branding" },
-  { value: "Training & Development" },
-  { value: "Promotion & Transition" },
-  { value: "Change Management" },
-  { value: "Organisational Behaviour" },
-  { value: "Upskilling" },
-  { value: "Reskilling" },
-  { value: "Engagement" },
-  { value: "Succession" },
-  { value: "Organisational Culture" },
-  { value: "Internal Mobility" },
-  { value: "Intercultural Management" },
-  { value: "Knowledge Management" },
-  { value: "Remuneration Strategy" },
+
 ];
 
 const defaultSelectedIndex_group_insterest = [5];
 
-export default class GroupButton extends Component {
+export default class GroupButton2 extends Component {
   constructor(props) {
     super(props);
 
     var selectedValues1 = [];
     defaultSelectedIndex_group_insterest.map((item) => {
-      selectedValues1.push(techGroupData[item].value);
+      selectedValues1.push(interestGroupData[item].value);
     });
 
     this.state = {
@@ -125,7 +136,7 @@ export default class GroupButton extends Component {
         {/**section text */}
         <View style={styles.viewHeader}>
           <Text style={styles.headerText}>
-            What are your areas of expertise?
+            What are your interests?
           </Text>
           <Text style={styles.bodyText}>Select multiple options</Text>
         </View>
@@ -142,7 +153,7 @@ export default class GroupButton extends Component {
               marginLeft: 10,
             }}
           >
-            Tech
+            Interests
             {/* Tech expertise: {_.join(this.state.multipleSelectedData_group, ", ")} */}
           </Text>
           <SelectMultipleGroupButton
@@ -169,46 +180,9 @@ export default class GroupButton extends Component {
             onSelectedValuesChange={(selectedValues) =>
               this._groupButtonOnSelectedValuesChange(selectedValues)
             }
-            group={techGroupData}
+            group={interestGroupData}
           />
 
-          <Text
-            style={{
-              fontFamily: "Roboto",
-              fontSize: 20,
-              fontWeight: "bold",
-              paddingTop: 10,
-              color: "#FFF",
-              marginLeft: 10,
-            }}
-          >
-            Talent (max. 5)</Text>
-          <SelectMultipleGroupButton
-            containerViewStyle={{
-              paddingTop: 10,
-              justifyContent: "flex-start",
-            }}
-            highLightStyle={{
-              borderColor: "#FFF",
-              backgroundColor: "transparent",
-              textColor: "#FFF",
-              borderTintColor: "#FFF",
-              backgroundTintColor: "#FFF",
-              textTintColor: "#5E18EA",
-            }}
-            textStyle={{
-              textAlign: "center",
-              fontFamily: "Roboto",
-              fontSize: 15,
-            }}
-            buttonViewStyle= {{
-              borderRadius: 13}}
-            maximumNumberSelected={5}
-            onSelectedValuesChange={(selectedValues) =>
-              this._groupButtonOnSelectedValuesChange_limited(selectedValues)
-            }
-            group={talentGroupData}
-          />
         </ScrollView>
         {/**bottom navigation */}
         <View style={styles.viewButton}>
@@ -256,7 +230,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-evenly",
   },
   viewHeader: {
-    flex: 0.25,
+    flex: 0.15,
     justifyContent: "flex-start",
     alignItems: "center",
     borderBottomColor: "#FFF",

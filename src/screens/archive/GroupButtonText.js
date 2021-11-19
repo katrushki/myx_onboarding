@@ -164,6 +164,8 @@ export default class GroupButton extends Component {
               fontFamily: "Roboto",
               fontSize: 15,
             }}
+            buttonViewStyle= {{
+              borderRadius: 13}}
             onSelectedValuesChange={(selectedValues) =>
               this._groupButtonOnSelectedValuesChange(selectedValues)
             }
@@ -180,9 +182,7 @@ export default class GroupButton extends Component {
               marginLeft: 10,
             }}
           >
-            Talent (max. 3){" "}
-            {_.join(this.state.multipleSelectedData_group_limited, ", ")}
-          </Text>
+            Talent (max. 5)</Text>
           <SelectMultipleGroupButton
             containerViewStyle={{
               paddingTop: 10,
@@ -201,7 +201,9 @@ export default class GroupButton extends Component {
               fontFamily: "Roboto",
               fontSize: 15,
             }}
-            maximumNumberSelected={3}
+            buttonViewStyle= {{
+              borderRadius: 13}}
+            maximumNumberSelected={5}
             onSelectedValuesChange={(selectedValues) =>
               this._groupButtonOnSelectedValuesChange_limited(selectedValues)
             }

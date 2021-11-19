@@ -40,9 +40,8 @@ const techGroupData = [
   { value: "Salesforce" },
   { value: "Scrum" },
   { value: "Agile Methodology" },
-  { value: "UX/UI design" },
   { value: "QA testing" },
-  { value: "Requirements engineering" },
+  { value: "Requirements Engineering" },
   { value: "Debugging" },
   { value: "Implementation" },
   { value: "Testing" },
@@ -72,6 +71,7 @@ const talentGroupData = [
   { value: "Succession" },
   { value: "Organisational Culture" },
   { value: "Internal Mobility" },
+  { value: "Intercultural Management" },
   { value: "Knowledge Management" },
   { value: "Remuneration Strategy" },
 ];

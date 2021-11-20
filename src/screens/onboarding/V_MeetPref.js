@@ -18,7 +18,10 @@ const MeetPrefOBS = ({navigation}) => {
   const [enabled, setEnabled] = useState(false);
 
   const handlePress = () => {
-    setEnabled(true);
+    if(enabled === false) {
+      setEnabled(true)
+    } else {setEnabled(false)
+    }
   };
 
 
@@ -62,9 +65,9 @@ const MeetPrefOBS = ({navigation}) => {
           </Text>
         </TouchableOpacity>
         <TouchableOpacity 
-          style={styles.selectionStyle}
+          style={[styles.selectionStyle, zoom && styles.selectionEnabledStyle]}
           onPress= {handlePress}>
-          <Text style={styles.selectionText}>
+          <Text style={[styles.selectionText, zoom && styles.selectionEnabledText]}>
             <Emoji name="computer" style={{ fontSize: 20, marginRight: 10 }} />{" "}
             Zoom
           </Text>

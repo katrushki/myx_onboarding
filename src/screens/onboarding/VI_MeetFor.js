@@ -29,7 +29,7 @@ const MeetForOBS = ({navigation}) => {
         <View style={{ flex: 1 }}>
           <TouchableOpacity
             style={{ marginLeft: 50, marginTop: 50 }}
-            onPress={() => navigation.navigate("MeetPref")}
+            onPress={() => navigation.goBack()}
           >
             <Ionicons
               name="chevron-back-circle"

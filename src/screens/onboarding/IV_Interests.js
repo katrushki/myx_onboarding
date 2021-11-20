@@ -48,7 +48,7 @@ export default class InterestsOBS extends Component {
           <View style={{ flex: 1 }}>
             <TouchableOpacity
               style={{ marginLeft: 50, marginTop: 50 }}
-              onPress={() => this.props.navigation.navigate("Expertise")}
+              onPress={() => this.props.navigation.goBack()}
             >
               <Ionicons
                 name="chevron-back-circle"

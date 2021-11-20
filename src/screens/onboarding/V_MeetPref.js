@@ -12,6 +12,7 @@ import Images from "../../../assets/Images";
 import { Ionicons } from "@expo/vector-icons";
 import Emoji from "react-native-emoji";
 import LogoOBS from "../../components/LogoOBS";
+import { TouchableHighlight } from "react-native-gesture-handler";
 
 const MeetPrefOBS = ({navigation}) => {
 
@@ -27,7 +28,7 @@ const MeetPrefOBS = ({navigation}) => {
         <View style={{ flex: 1 }}>
           <TouchableOpacity
             style={{ marginLeft: 50, marginTop: 50 }}
-            onPress={() => navigation.navigate("Interests")}
+            onPress={() => navigation.goBack()}
           >
             <Ionicons
               name="chevron-back-circle"

@@ -1,6 +1,6 @@
 // BASIC INFO - setting up your basic information screen
 
-import * as React from "react";
+import React from "react";
 import {
   View,
   Text,
@@ -12,8 +12,14 @@ import {
 import Images from "../../../assets/Images";
 import { Ionicons } from "@expo/vector-icons";
 import LogoOBS from "../../components/LogoOBS";
+import { useState } from "react";
 
 const BasicInfoOBS = ({navigation}) => {
+  const [occupation, setOccupation] = useState('');
+  const [location, setLocation] = useState('');
+  const [company, setCompany] = useState('');
+  const [mode, setMode] = useState('');
+  const [tenure, setTenure] = useState('');
 
   //implement useState function here to hold data input to make a request with axios
   return (
@@ -34,6 +40,8 @@ const BasicInfoOBS = ({navigation}) => {
             autoCorrect={false}
             placeholderTextColor={"#B392F5"}
             placeholder={"Occupation"}
+            value= {occupation}
+            onChangeText= {(newValue) => setOccupation(newValue)}
           ></TextInput>
         </View>
         <View style={styles.viewContainer}>
@@ -42,6 +50,8 @@ const BasicInfoOBS = ({navigation}) => {
             autoCorrect={false}
             placeholderTextColor={"#B392F5"}
             placeholder={"Location"}
+            value= {location}
+            onChangeText= {(newValue) => setLocation(newValue)}
           ></TextInput>
         </View>
         <View style={styles.viewContainer}>
@@ -50,6 +60,8 @@ const BasicInfoOBS = ({navigation}) => {
             autoCorrect={false}
             placeholderTextColor={"#B392F5"}
             placeholder={"Company"}
+            value= {company}
+            onChangeText= {(newValue) => setCompany(newValue)}
           ></TextInput>
         </View>
         <View style={styles.viewContainer}>
@@ -58,6 +70,8 @@ const BasicInfoOBS = ({navigation}) => {
             autoCorrect={false}
             placeholderTextColor={"#B392F5"}
             placeholder={"Remote/Hybrid/Office"}
+            value= {mode}
+            onChangeText= {(newValue) => setMode(newValue)}
           ></TextInput>
         </View>
         <View style={styles.viewContainer}>
@@ -66,6 +80,8 @@ const BasicInfoOBS = ({navigation}) => {
             autoCorrect={false}
             placeholderTextColor={"#B392F5"}
             placeholder={"Tenure"}
+            value= {tenure}
+            onChangeText= {(newValue) => setTenure(newValue)}
           ></TextInput>
         </View>
       </View>

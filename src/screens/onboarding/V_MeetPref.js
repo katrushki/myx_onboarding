@@ -1,6 +1,6 @@
 // MEETING PREFERENCE SCREEN - in person, Zoom, or prefer not to meet
 
-import * as React from "react";
+import React, {useState} from "react";
 import {
   View,
   Text,
@@ -12,9 +12,15 @@ import Images from "../../../assets/Images";
 import { Ionicons } from "@expo/vector-icons";
 import Emoji from "react-native-emoji";
 import LogoOBS from "../../components/LogoOBS";
-import { TouchableHighlight } from "react-native-gesture-handler";
+
 
 const MeetPrefOBS = ({navigation}) => {
+  const [enabled, setEnabled] = useState(false);
+
+  const handlePress = () => {
+    setEnabled(true);
+  };
+
 
   return (
     <ImageBackground
@@ -47,19 +53,25 @@ const MeetPrefOBS = ({navigation}) => {
         <Text style={styles.headerText}>How would you prefer to meet?</Text>
       </View>
       <View style={styles.viewSelection}>
-        <TouchableOpacity style={styles.selectionStyle}>
-          <Text style={styles.selectionText}>
+        <TouchableOpacity 
+          style={[styles.selectionStyle, enabled && styles.selectionEnabledStyle] }
+          onPress= {handlePress}>
+          <Text style={[styles.selectionText, enabled && styles.selectionEnabledText]}>
             <Emoji name="couple" style={{ fontSize: 20, marginRight: 10 }} /> In
             person
           </Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.selectionStyle}>
+        <TouchableOpacity 
+          style={styles.selectionStyle}
+          onPress= {handlePress}>
           <Text style={styles.selectionText}>
             <Emoji name="computer" style={{ fontSize: 20, marginRight: 10 }} />{" "}
             Zoom
           </Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.selectionStyle}>
+        <TouchableOpacity 
+          style={styles.selectionStyle}
+          onPress={handlePress}>
           <Text style={styles.selectionText}>
             <Emoji name="squid" style={{ fontSize: 20, marginRight: 10 }} />{" "}
             Prefer not to meet
@@ -127,6 +139,20 @@ const styles = StyleSheet.create({
     paddingHorizontal: 65,
     paddingVertical: 35,
   },
+  iconStyle: {
+    color: "#FFF",
+    opacity: 0.75,
+  },
+  selectionEnabledStyle: {
+    justifyContent: "center",
+    backgroundColor: "#FFF",
+    height: 60,
+    width: 300,
+    borderRadius: 13,
+    borderWidth: 0.5,
+    borderColor: "#FFF",
+    marginBottom: 15,
+  },
   headerText: {
     fontFamily: "Roboto",
     fontSize: 30,
@@ -146,10 +172,12 @@ const styles = StyleSheet.create({
     color: "#FFF",
     textAlign: "center",
   },
-  iconStyle: {
-    color: "#FFF",
-    opacity: 0.75,
-  },
+  selectionEnabledText: {
+    fontFamily: "Roboto",
+    fontSize: 20,
+    color: "#6624EB",
+    textAlign: "center",
+  }
 });
 
 export default MeetPrefOBS;

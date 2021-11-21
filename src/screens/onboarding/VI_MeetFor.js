@@ -1,6 +1,6 @@
 // MEETING FOR SCREEN - Coffee, Tea, Lunch, Drinks, Chat, Walk, Other
 
-import * as React from "react";
+import React, { useState } from "react";
 import {
   View,
   Text,
@@ -9,13 +9,66 @@ import {
   ImageBackground,
 } from "react-native";
 import Images from "../../../assets/Images";
-import { Ionicons, AntDesign  } from "@expo/vector-icons";
+import { Ionicons, AntDesign } from "@expo/vector-icons";
 import Emoji from "react-native-emoji";
 import LogoOBS from "../../components/LogoOBS";
 import { ScrollView } from "react-native-gesture-handler";
 
+const MeetForOBS = ({ navigation }) => {
+  const [coffee, setCoffee] = useState(false);
+  const [lunch, setLunch] = useState(false);
+  const [drinks, setDrinks] = useState(false);
+  const [chat, setChat] = useState(false);
+  const [walk, setWalk] = useState(false);
+  const [other, setOther] = useState(false);
 
-const MeetForOBS = ({navigation}) => {
+  const handleCoffee = () => {
+    if (coffee === false) {
+      setCoffee(true);
+    } else {
+      setCoffee(false);
+    }
+  };
+
+  const handleLunch = () => {
+    if (lunch === false) {
+      setLunch(true);
+    } else {
+      setLunch(false);
+    }
+  };
+
+  const handleDrinks = () => {
+    if (drinks === false) {
+      setDrinks(true);
+    } else {
+      setDrinks(false);
+    }
+  };
+
+  const handleChat = () => {
+    if (chat === false) {
+      setChat(true);
+    } else {
+      setChat(false);
+    }
+  };
+
+  const handleWalk = () => {
+    if (walk === false) {
+      setWalk(true);
+    } else {
+      setWalk(false);
+    }
+  };
+
+  const handleOther = () => {
+    if (other === false) {
+      setOther(true);
+    } else {
+      setOther(false);
+    }
+  };
 
   return (
     <ImageBackground
@@ -24,7 +77,7 @@ const MeetForOBS = ({navigation}) => {
       resizeMethod="auto"
       style={styles.viewStyle}
     >
-  {/**header navigation */}
+      {/**header navigation */}
       <View style={{ flexDirection: "row", flex: 1 }}>
         <View style={{ flex: 1 }}>
           <TouchableOpacity
@@ -43,20 +96,38 @@ const MeetForOBS = ({navigation}) => {
         </View>
         <View style={{ flex: 1 }}></View>
       </View>
-  {/**clickable items  */}
+      {/**section header  */}
       <View style={styles.viewHeader}>
         <Text style={styles.headerText}>Let's meet for ...</Text>
         <Text style={styles.bodyText}>Multiple selection possible</Text>
       </View>
+
+      {/**clickable items  */}
       <View style={styles.viewSelection}>
-        <TouchableOpacity style={styles.selectionStyle}>
-          <Text style={styles.selectionText}>
+        <TouchableOpacity
+          style={[
+            styles.selectionStyle,
+            coffee && styles.selectionEnabledStyle,
+          ]}
+          onPress={handleCoffee}
+        >
+          <Text
+            style={[
+              styles.selectionText,
+              coffee && styles.selectionEnabledText,
+            ]}
+          >
             <Emoji name="coffee" style={{ fontSize: 20, marginRight: 10 }} />{" "}
             Coffee/Tea
           </Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.selectionStyle}>
-          <Text style={styles.selectionText}>
+        <TouchableOpacity
+          style={[styles.selectionStyle, lunch && styles.selectionEnabledStyle]}
+          onPress={handleLunch}
+        >
+          <Text
+            style={[styles.selectionText, lunch && styles.selectionEnabledText]}
+          >
             <Emoji
               name="fork_and_knife"
               style={{ fontSize: 20, marginRight: 10 }}
@@ -64,20 +135,41 @@ const MeetForOBS = ({navigation}) => {
             Lunch
           </Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.selectionStyle}>
-          <Text style={styles.selectionText}>
+        <TouchableOpacity
+          style={[
+            styles.selectionStyle,
+            drinks && styles.selectionEnabledStyle,
+          ]}
+          onPress={handleDrinks}
+        >
+          <Text
+            style={[
+              styles.selectionText,
+              drinks && styles.selectionEnabledText,
+            ]}
+          >
             <Emoji name="cocktail" style={{ fontSize: 20, marginRight: 10 }} />{" "}
             Drinks
           </Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.selectionStyle}>
-          <Text style={styles.selectionText}>
+        <TouchableOpacity
+          style={[styles.selectionStyle, chat && styles.selectionEnabledStyle]}
+          onPress={handleChat}
+        >
+          <Text
+            style={[styles.selectionText, chat && styles.selectionEnabledText]}
+          >
             <Emoji name="nerd_face" style={{ fontSize: 20, marginRight: 10 }} />{" "}
             Chat
           </Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.selectionStyle}>
-          <Text style={styles.selectionText}>
+        <TouchableOpacity
+          style={[styles.selectionStyle, walk && styles.selectionEnabledStyle]}
+          onPress={handleWalk}
+        >
+          <Text
+            style={[styles.selectionText, walk && styles.selectionEnabledText]}
+          >
             <Emoji
               name="deciduous_tree"
               style={{ fontSize: 20, marginRight: 10 }}
@@ -85,15 +177,20 @@ const MeetForOBS = ({navigation}) => {
             Walk
           </Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.selectionStyle}>
-          <Text style={styles.selectionText}>
+        <TouchableOpacity
+          style={[styles.selectionStyle, other && styles.selectionEnabledStyle]}
+          onPress={handleOther}
+        >
+          <Text
+            style={[styles.selectionText, other && styles.selectionEnabledText]}
+          >
             <Emoji name="rocket" style={{ fontSize: 20, marginRight: 10 }} />{" "}
             Other
           </Text>
         </TouchableOpacity>
       </View>
-      
-  {/**bottom navigation */}
+
+      {/**bottom navigation */}
       <View style={styles.viewButton}>
         <TouchableOpacity
           style={styles.buttonStyle}
@@ -102,11 +199,7 @@ const MeetForOBS = ({navigation}) => {
           <Text style={styles.buttonText}>Skip</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.buttonStyle}>
-          <AntDesign
-            name="checkcircle"
-            size={35}
-            style={styles.iconStyle}
-          />
+          <AntDesign name="checkcircle" size={35} style={styles.iconStyle} />
         </TouchableOpacity>
       </View>
     </ImageBackground>
@@ -153,6 +246,16 @@ const styles = StyleSheet.create({
     paddingHorizontal: 65,
     paddingVertical: 30,
   },
+  selectionEnabledStyle: {
+    justifyContent: "center",
+    backgroundColor: "#FFF",
+    height: 60,
+    width: 300,
+    borderRadius: 13,
+    borderWidth: 0.5,
+    borderColor: "#FFF",
+    marginBottom: 15,
+  },
   headerText: {
     fontFamily: "Roboto",
     fontSize: 30,
@@ -181,6 +284,12 @@ const styles = StyleSheet.create({
   iconStyle: {
     color: "#FFF",
     opacity: 0.75,
+  },
+  selectionEnabledText: {
+    fontFamily: "Roboto",
+    fontSize: 20,
+    color: "#6624EB",
+    textAlign: "center",
   },
 });
 

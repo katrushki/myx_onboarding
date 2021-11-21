@@ -1,6 +1,6 @@
 // MEETING PREFERENCE SCREEN - in person, Zoom, or prefer not to meet
 
-import React, {useState} from "react";
+import React, { useState } from "react";
 import {
   View,
   Text,
@@ -13,17 +13,34 @@ import { Ionicons } from "@expo/vector-icons";
 import Emoji from "react-native-emoji";
 import LogoOBS from "../../components/LogoOBS";
 
+const MeetPrefOBS = ({ navigation }) => {
+  const [inperson, setInPerson] = useState(false);
+  const [zoom, setZoom] = useState(false);
+  const [no, setNo] = useState(false);
 
-const MeetPrefOBS = ({navigation}) => {
-  const [enabled, setEnabled] = useState(false);
-
-  const handlePress = () => {
-    if(enabled === false) {
-      setEnabled(true)
-    } else {setEnabled(false)
+  const handlePerson = () => {
+    if (inperson === false) {
+      setInPerson(true);
+    } else {
+      setInPerson(false);
     }
   };
 
+  const handleZoom = () => {
+    if (zoom === false) {
+      setZoom(true);
+    } else {
+      setZoom(false);
+    }
+  };
+
+  const handleNo = () => {
+    if (no === false) {
+      setNo(true);
+    } else {
+      setNo(false);
+    }
+  };
 
   return (
     <ImageBackground
@@ -32,7 +49,7 @@ const MeetPrefOBS = ({navigation}) => {
       resizeMethod="auto"
       style={styles.viewStyle}
     >
-  {/**header navigation */}
+      {/**header navigation */}
       <View style={{ flexDirection: "row", flex: 1 }}>
         <View style={{ flex: 1 }}>
           <TouchableOpacity
@@ -51,38 +68,53 @@ const MeetPrefOBS = ({navigation}) => {
         </View>
         <View style={{ flex: 1 }}></View>
       </View>
-  {/**clickable items  */}
+      {/**clickable items  */}
       <View style={styles.viewHeader}>
         <Text style={styles.headerText}>How would you prefer to meet?</Text>
       </View>
       <View style={styles.viewSelection}>
-        <TouchableOpacity 
-          style={[styles.selectionStyle, enabled && styles.selectionEnabledStyle] }
-          onPress= {handlePress}>
-          <Text style={[styles.selectionText, enabled && styles.selectionEnabledText]}>
+        <TouchableOpacity
+          style={[
+            styles.selectionStyle,
+            inperson && styles.selectionEnabledStyle,
+          ]}
+          onPress={handlePerson}
+        >
+          <Text
+            style={[
+              styles.selectionText,
+              inperson && styles.selectionEnabledText,
+            ]}
+          >
             <Emoji name="couple" style={{ fontSize: 20, marginRight: 10 }} /> In
             person
           </Text>
         </TouchableOpacity>
-        <TouchableOpacity 
+        <TouchableOpacity
           style={[styles.selectionStyle, zoom && styles.selectionEnabledStyle]}
-          onPress= {handlePress}>
-          <Text style={[styles.selectionText, zoom && styles.selectionEnabledText]}>
+          onPress={handleZoom}
+        >
+          <Text
+            style={[styles.selectionText, zoom && styles.selectionEnabledText]}
+          >
             <Emoji name="computer" style={{ fontSize: 20, marginRight: 10 }} />{" "}
             Zoom
           </Text>
         </TouchableOpacity>
-        <TouchableOpacity 
-          style={styles.selectionStyle}
-          onPress={handlePress}>
-          <Text style={styles.selectionText}>
+        <TouchableOpacity
+          style={[styles.selectionStyle, no && styles.selectionEnabledStyle]}
+          onPress={handleNo}
+        >
+          <Text
+            style={[styles.selectionText, no && styles.selectionEnabledText]}
+          >
             <Emoji name="squid" style={{ fontSize: 20, marginRight: 10 }} />{" "}
             Prefer not to meet
           </Text>
         </TouchableOpacity>
       </View>
 
-  {/**bottom navigation */}
+      {/**bottom navigation */}
       <View style={styles.viewButton}>
         <TouchableOpacity
           style={styles.buttonStyle}
@@ -180,7 +212,7 @@ const styles = StyleSheet.create({
     fontSize: 20,
     color: "#6624EB",
     textAlign: "center",
-  }
+  },
 });
 
 export default MeetPrefOBS;

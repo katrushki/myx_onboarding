@@ -84,7 +84,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#6C2BEC",
     height: 60,
     width: 300,
-    borderRadius: 100,
+    borderRadius: 13,
     justifyContent: "center",
     alignItems: "center",
     // elevation prop adds the drop shadow (!)

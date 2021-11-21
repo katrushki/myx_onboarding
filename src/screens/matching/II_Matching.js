@@ -1,0 +1,144 @@
+// MATCHING SCREEN
+
+import InsetShadow from "react-native-inset-shadow";
+import React from "react";
+import {
+  View,
+  StyleSheet,
+  Text,
+  Image,
+  TouchableOpacity,
+  ImageBackground,
+} from "react-native";
+import Images from "../../../assets/Images";
+import { Ionicons } from "@expo/vector-icons";
+
+
+const Matching = ({ navigation }) => {
+  return (
+    <ImageBackground
+      source={Images.matchBackground}
+      resizeMode={"cover"}
+      resizeMethod={"auto"}
+      style={styles.viewStyle}
+    >
+      {/**header navigation */}
+      <View style={{ flexDirection: "row", flex: 1 }}>
+        <View style={{ flex: 1, flexDirection: "row", alignSelf: "center" }}>
+          <TouchableOpacity
+            style={{ marginLeft: 50, marginTop: 50 }}
+            onPress={() => navigation.goBack()}
+          >
+            <Ionicons
+              name="chevron-back-circle"
+              size={35}
+              style={{ color: "#5E17EB" }}
+            />
+          </TouchableOpacity>
+        </View>
+        <View flex={1} flexDirection={"row"} style={styles.viewLogoStyle}>
+          <Image style={styles.logoStyle} source={Images.logo_s} />
+        </View>
+        <View style={{ flex: 1 }}></View>
+      </View>
+
+      <View style={styles.viewBodyStyle}>
+        <Text style={styles.bodyText}>
+          Press to myx - the longer you press the more matches will appear.
+        </Text>
+      </View>
+      <View style={styles.viewButtonStyle}>
+        <TouchableOpacity
+          style={styles.buttonStyle}
+          onPress={() => {
+            navigation.navigate("Home");
+          }}
+        >
+          <Text style={styles.buttonText}>Push it real good </Text>
+        </TouchableOpacity>
+      </View>
+    </ImageBackground>
+  );
+};
+
+const styles = StyleSheet.create({
+  viewStyle: {
+    // backgroundColor: "#5E18EA",
+    flexDirection: "column",
+    flex: 1,
+  },
+  viewHeaderStyle: {
+    flex: 1,
+    margin: 100,
+    justifyContent: "flex-start",
+    alignItems: "center",
+    paddingVertical: 20,
+  },
+  viewButtonStyle: {
+    flex: 5,
+    justifyContent: "flex-start",
+    alignItems: "center",
+    borderBottomColor: "black",
+  },
+  viewBodyStyle: {
+    flex: 1,
+    marginTop: 50,
+    justifyContent: "flex-start",
+    alignSelf: "baseline",
+    alignItems: "center",
+    paddingHorizontal: 50,
+  },
+  headerText: {
+    fontFamily: "Roboto",
+    fontSize: 18,
+    fontWeight: "bold",
+    color: "#000",
+    textAlign: "center",
+  },
+  bodyText: {
+    fontFamily: "Roboto",
+    fontSize: 12,
+    fontWeight: "600",
+    color: "#000",
+    textAlign: "center",
+  },
+  buttonStyle: {
+    backgroundColor: "#6C2BEC",
+    height: 250,
+    width: 250,
+    borderRadius: 150,
+    justifyContent: "center",
+    alignItems: "center",
+
+    // elevation prop adds the drop shadow (!)
+    elevation: 38,
+  },
+  buttonText: {
+    fontFamily: "Roboto",
+    fontWeight: "bold",
+    fontSize: 28,
+    color: "#FFFFFF",
+    textTransform: "uppercase",
+    textAlign: "center",
+    alignSelf: "center",
+    paddingHorizontal: 40,
+    paddingVertical: 25,
+  },
+  imageStyle: {
+    flex: 1,
+    resizeMode: "cover",
+    justifyContent: "center",
+  },
+  logoStyle: {
+    height: 60,
+    width: 55,
+    marginTop: 50,
+    alignItems: "center",
+  },
+  viewLogoStyle: {
+    alignContent: "flex-start",
+    justifyContent: "center",
+  },
+});
+
+export default Matching;

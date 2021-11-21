@@ -9,12 +9,13 @@ import InterestsOBS from './src/screens/onboarding/IV_Interests';
 import MeetPrefOBS from './src/screens/onboarding/V_MeetPref';
 import MeetForOBS from './src/screens/onboarding/VI_MeetFor';
 import Home from './src/screens/matching/I_Home';
+import Matching from './src/screens/matching/II_Matching';
 
 
 
 const Stack = createNativeStackNavigator();
 
-const App = ()=> {
+function App () {
   return(
     <NavigationContainer>
       <Stack.Navigator>
@@ -51,6 +52,10 @@ const App = ()=> {
           options = {{headerShown: false}}
           name= 'Home'
           component= {Home}/>
+        <Stack.Screen
+          options = {{headerShown: false}}
+          name= 'Matching'
+          component= {Matching}/>
       </Stack.Navigator>
     </NavigationContainer>
   )

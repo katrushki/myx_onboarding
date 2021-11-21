@@ -42,7 +42,7 @@ export default class Home extends Component {
   render() {
     return (
       <ImageBackground
-        source={Images.prematchBackground}
+        source={Images.matchBackground}
         resizeMode="cover"
         resizeMethod="auto"
         style={styles.viewStyle}

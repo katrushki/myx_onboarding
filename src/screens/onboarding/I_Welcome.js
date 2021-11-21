@@ -13,6 +13,7 @@ import {
 } from "react-native";
 import Images from "../../../assets/Images";
 import LogoOBS from "../../components/LogoOBS";
+import HomeGB from "../archive/Prematching_GB";
 
 // onboarding screen I component creation
 const WelcomeOBS = ({navigation}) => {

@@ -66,6 +66,7 @@ const Matching = ({ navigation }) => {
             style={[styles.buttonStyle, push && styles.pushedButtonStyle]}
             onLongPress= {handlePush}
             onPressIn={() => Vibration.vibrate(1500)}
+            onPressOut= {() => navigation.navigate('Matched')}
                 >
             <Text style={[styles.buttonText, push && styles.pushedButtonText]}>Push it real good </Text>
             </TouchableOpacity>

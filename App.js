@@ -10,6 +10,8 @@ import MeetPrefOBS from './src/screens/onboarding/V_MeetPref';
 import MeetForOBS from './src/screens/onboarding/VI_MeetFor';
 import Home from './src/screens/matching/I_Home';
 import Matching from './src/screens/matching/II_Matching';
+import MatchedScreen from './src/screens/matching/III_Matched';
+
 
 
 
@@ -50,12 +52,16 @@ function App () {
           component= {AllSetOBS}/>
         <Stack.Screen
           options = {{headerShown: false}}
+          name= 'Matching'
+          component= {Matching}/>
+        <Stack.Screen
+          options = {{headerShown: false}}
           name= 'Home'
           component= {Home}/>
         <Stack.Screen
           options = {{headerShown: false}}
-          name= 'Matching'
-          component= {Matching}/>
+          name= 'Matched'
+          component= {MatchedScreen}/>
       </Stack.Navigator>
     </NavigationContainer>
   )

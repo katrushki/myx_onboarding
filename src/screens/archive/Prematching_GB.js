@@ -1,6 +1,3 @@
-// HOME SCREEN OR PREMATCHING SCREEN - Drag and drop field with search bar to sift through the tags that we have 
-
-// EXPERTISE SCREEN - What are your areas of expertise? Select as many as you like
 import React, { Component } from "react";
 
 import {
@@ -22,7 +19,7 @@ import Images from "../../../assets/Images";
 
 const defaultSelectedIndex_group_interest = [];
 
-export default class Home extends Component {
+export default class HomeGB extends Component {
   constructor(props) {
     super(props);
 

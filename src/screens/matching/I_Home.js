@@ -8,6 +8,7 @@ import {
   Image,
   TouchableOpacity,
   ImageBackground,
+  Vibration,
 } from "react-native";
 import Images from "../../../assets/Images";
 
@@ -23,11 +24,12 @@ const Home = ({navigation}) => {
             <Image style= {styles.logoStyle} source={Images.logo_s}/> 
         </View>
       <View style={styles.viewHeaderStyle}>
-        <Text style={styles.headerText}>Drag and drop the tags that you want to be matched with into the designated field</Text>
+        <Text style={styles.headerText}>Select the tags that you want to be matched with into the designated field</Text>
       </View>
       <View style={styles.viewButtonStyle}>
         <TouchableOpacity
           style={styles.buttonStyle}
+          onPressOut= {Vibration.vibrate(50)}
           onPress={() => {
             navigation.navigate("Matching");
           }}
@@ -50,6 +52,7 @@ const styles = StyleSheet.create({
     justifyContent: "flex-start",
     alignItems: "center",
     paddingVertical: 20,
+    paddingHorizontal: 30
   },
   viewButtonStyle: {
     flex: 1,
@@ -59,8 +62,8 @@ const styles = StyleSheet.create({
   },
   headerText: {
     fontFamily: "Roboto",
-    fontSize: 18,
-    fontWeight: "800",
+    fontSize: 16,
+    fontWeight: "bold",
     color: "#000",
     textAlign: 'center'
   },

@@ -12,7 +12,7 @@ import {
 } from "react-native";
 import Images from "../../../assets/Images";
 import { Ionicons } from "@expo/vector-icons";
-import * as Haptics from 'expo-haptics';
+
 
 
 const Matching = ({ navigation }) => {
@@ -20,7 +20,7 @@ const Matching = ({ navigation }) => {
 
     const handlePush = () => {
         if (push === false) {
-          setPush(true) && Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Heavy) ;
+          setPush(true);
         } else {
           setPush(false);
         }
@@ -62,14 +62,13 @@ const Matching = ({ navigation }) => {
 
       {/**THE most IMPORTANT button ever made */}
       <View style={styles.viewButtonStyle}>
-        <TouchableOpacity
-          style={[styles.buttonStyle, push && styles.pushedButtonStyle]}
-          onLongPress= {handlePush}
-          onPressIn={() => Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Heavy)}
-          onPress= {() => Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Heavy)}
-          onPressOut={() => Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Heavy)}   >
-          <Text style={[styles.buttonText, push && styles.pushedButtonText]}>Push it real good </Text>
-        </TouchableOpacity>
+            <TouchableOpacity
+            style={[styles.buttonStyle, push && styles.pushedButtonStyle]}
+            onLongPress= {handlePush}
+            onPressIn={() => Vibration.vibrate(1500)}
+                >
+            <Text style={[styles.buttonText, push && styles.pushedButtonText]}>Push it real good </Text>
+            </TouchableOpacity>
       </View>
     </ImageBackground>
   );
@@ -126,7 +125,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
 
     // elevation prop adds the drop shadow (!)
-    elevation: 38,
+    elevation: 100,
   },
   pushedButtonStyle: {
     backgroundColor: "#280372",

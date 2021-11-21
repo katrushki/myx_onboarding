@@ -198,7 +198,9 @@ const MeetForOBS = ({ navigation }) => {
         >
           <Text style={styles.buttonText}>Skip</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.buttonStyle}>
+        <TouchableOpacity 
+          style={styles.buttonStyle}
+          onPress={() => navigation.navigate("AllSet")}>
           <AntDesign name="checkcircle" size={35} style={styles.iconStyle} />
         </TouchableOpacity>
       </View>

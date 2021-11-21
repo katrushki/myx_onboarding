@@ -92,7 +92,9 @@ const BasicInfoOBS = ({navigation}) => {
         >
           <Text style={styles.buttonText}>Skip</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.buttonStyle}>
+        <TouchableOpacity
+          onPress= {() => navigation.navigate('Expertise')} 
+          style={styles.buttonStyle}>
           <Ionicons
             name="chevron-forward-circle"
             size={35}

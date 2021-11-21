@@ -8,6 +8,7 @@ import ExpertiseOBS from './src/screens/onboarding/III_Expertise';
 import InterestsOBS from './src/screens/onboarding/IV_Interests';
 import MeetPrefOBS from './src/screens/onboarding/V_MeetPref';
 import MeetForOBS from './src/screens/onboarding/VI_MeetFor';
+import Home from './src/screens/matching/I_Home';
 
 
 
@@ -46,6 +47,10 @@ const App = ()=> {
           options = {{headerShown: false}}
           name= 'AllSet'
           component= {AllSetOBS}/>
+        <Stack.Screen
+          options = {{headerShown: false}}
+          name= 'Home'
+          component= {Home}/>
       </Stack.Navigator>
     </NavigationContainer>
   )

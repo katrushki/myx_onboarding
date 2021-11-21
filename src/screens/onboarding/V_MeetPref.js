@@ -122,7 +122,9 @@ const MeetPrefOBS = ({ navigation }) => {
         >
           <Text style={styles.buttonText}>Skip</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.buttonStyle}>
+        <TouchableOpacity 
+          style={styles.buttonStyle}
+          onPress={() => navigation.navigate("MeetFor")} >
           <Ionicons
             name="chevron-forward-circle"
             size={35}

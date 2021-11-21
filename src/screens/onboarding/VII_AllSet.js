@@ -32,7 +32,9 @@ const AllSetOBS = ({navigation}) => {
         <Text style={styles.bodyText}>It's about time to get you myxed?! </Text>
       </View>
       <View style={styles.viewButtonStyle}>
-        <TouchableOpacity style={styles.buttonStyle}>
+        <TouchableOpacity 
+          style={styles.buttonStyle}
+          onPress= {()=> {navigation.navigate('Home')}} >
           <Text style={styles.buttonText}>Enter the myxverse </Text>
         </TouchableOpacity>
       </View>

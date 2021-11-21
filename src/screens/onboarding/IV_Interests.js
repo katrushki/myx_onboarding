@@ -121,7 +121,9 @@ export default class InterestsOBS extends Component {
           >
             <Text style={styles.buttonText}>Skip</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.buttonStyle}>
+          <TouchableOpacity
+            onPress={() => this.props.navigation.navigate("MeetPref")} 
+            style={styles.buttonStyle}>
             <Ionicons
               name="chevron-forward-circle"
               size={35}

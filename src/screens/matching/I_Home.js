@@ -60,7 +60,7 @@ const styles = StyleSheet.create({
   headerText: {
     fontFamily: "Roboto",
     fontSize: 18,
-    fontWeight: "bold",
+    fontWeight: "800",
     color: "#000",
     textAlign: 'center'
   },
